@@ -281,9 +281,9 @@ print("Isso é o resultado que deve aparecer no console")
 
 ---
 
-background-image: url(https://www.perl.com/images/building-a-utf8-encoder-in-perl/bart-simpson-utf8.png)
-background-size: 600px
-background-position: 50% 70%
+background-image: url(https://external-preview.redd.it/fRuJ7ThyWO2S2Qof2rDCTetabr4nnruL4J7ux3mwqw0.jpg?auto=webp&amp;s=5e3bd38ade26e1d03c02f93ebd7defe01a5dc06a)
+background-size: 350px
+background-position: 50% 90%
 
 # 2.2 Editor/Roteiro (*code*/*script*)
 
@@ -1549,8 +1549,18 @@ ls()
 `Session -&gt; Load Workspace... -&gt; meus_objetos.RData` 
 
 
+
+
+
 ```r
+# rodem para verificar 
 ls()
+```
+
+```
+##  [1] "adi"       "bar"       "foo"       "lo"        "mu"       
+##  [6] "obj"       "obj_10"    "obj_2"     "rep_each"  "rep_times"
+## [11] "sq"        "su"        "sub"       "va1"       "va2"
 ```
 
 ---
@@ -1634,11 +1644,72 @@ library(help = "vegan")
 # citacao do R
 citation()
 ```
---
+
+```
+## 
+## To cite R in publications use:
+## 
+##   R Core Team (2019). R: A language and environment for
+##   statistical computing. R Foundation for Statistical Computing,
+##   Vienna, Austria. URL https://www.R-project.org/.
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Manual{,
+##     title = {R: A Language and Environment for Statistical Computing},
+##     author = {{R Core Team}},
+##     organization = {R Foundation for Statistical Computing},
+##     address = {Vienna, Austria},
+##     year = {2019},
+##     url = {https://www.R-project.org/},
+##   }
+## 
+## We have invested a lot of time and effort in creating R, please
+## cite it when using it for data analysis. See also
+## 'citation("pkgname")' for citing R packages.
+```
+
+---
+
+# 2.10 Citações
+
+## Como citar o R e os pacotes em trabalhos?
+
 
 ```r
 # citacao dos pacotes
 citation("vegan")
+```
+
+```
+## Warning in citation("vegan"): no date field in DESCRIPTION file of package
+## 'vegan'
+```
+
+```
+## 
+## To cite package 'vegan' in publications use:
+## 
+##   Jari Oksanen, F. Guillaume Blanchet, Michael Friendly, Roeland
+##   Kindt, Pierre Legendre, Dan McGlinn, Peter R. Minchin, R. B.
+##   O'Hara, Gavin L. Simpson, Peter Solymos, M. Henry H. Stevens,
+##   Eduard Szoecs and Helene Wagner (2019). vegan: Community Ecology
+##   Package. R package version 2.6-0.
+##   https://github.com/vegandevs/vegan
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Manual{,
+##     title = {vegan: Community Ecology Package},
+##     author = {Jari Oksanen and F. Guillaume Blanchet and Michael Friendly and Roeland Kindt and Pierre Legendre and Dan McGlinn and Peter R. Minchin and R. B. O'Hara and Gavin L. Simpson and Peter Solymos and M. Henry H. Stevens and Eduard Szoecs and Helene Wagner},
+##     year = {2019},
+##     note = {R package version 2.6-0},
+##     url = {https://github.com/vegandevs/vegan},
+##   }
+## 
+## ATTENTION: This citation information has been auto-generated from
+## the package DESCRIPTION file and may need manual editing, see
+## 'help("citation")'.
 ```
 
 ---
@@ -1693,7 +1764,7 @@ sum(1 2)
 
 ---
 
-# 2.10 Principais erros
+# 2.11 Principais erros
 
 ## 3. Chamar um objeto errado
 
@@ -1722,7 +1793,7 @@ ggplot(iris) + aes(Sepal.Length, Sepal.Width) + geom_point()
 
 ---
 
-# 2.10 Principais erros
+# 2.11 Principais erros
 
 ## 4. Esquecer de carregar um pacote
 
@@ -1731,7 +1802,7 @@ library(ggplot2)
 ggplot(iris) + aes(Sepal.Length, Sepal.Width) + geom_point() + theme_bw()
 ```
 
-![](02_aula_minicurso_r_sebio_2019_files/figure-html/unnamed-chunk-68-1.png)&lt;!-- --&gt;
+![](02_aula_minicurso_r_sebio_2019_files/figure-html/unnamed-chunk-69-1.png)&lt;!-- --&gt;
 
 ---
 
