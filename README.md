@@ -32,7 +32,7 @@ A linguagem R vem se destacando nos últimos anos (desde de 2000), como a princi
 À definir
 
 **Ementa** <br> 
-[pdf]()
+[pdf](https://github.com/mauriciovancine/minicurso-r-sebio-2019/blob/master/00_ementa/plano_ensino_minicurso_r_2019_sebio.pdf)
 
 **Contato** <br>
 Para mais informações ou dúvidas, envie e-mail para Maurício Vancine (mauricio.vancine@gmail.com)
