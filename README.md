@@ -47,10 +47,9 @@ Será necessário que todos tragam seus próprios notebooks ou talvez haja compu
 **Softwares**<br>
 R e RStudio <br>
 1. Instalar a versão mais recente do [R (3.6.1)](https://www.r-project.org) <br>
-2. [RStudio (1.2.5001)](https://www.rstudio.com) <br>
+2. Instalar a versão mais recente do [RStudio (1.2.5001)](https://www.rstudio.com) <br>
 [Vídeo de instalação do R e do RStudio](https://youtu.be/l1bWvZMNMCM) <br>
 [Curso da linguagem R](https://www.youtube.com/playlist?list=PLucm8g_ezqNq0RMHvzZ8M32xhopFhmsr6)
-
 
 #### Linux (Debian, Ubuntu e Linux Mint)
 
