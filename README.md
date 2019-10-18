@@ -2,7 +2,7 @@
 
 ## 30ª Semana de Estudos da Biologia - UNESP - Rio Claro
 
-## Nome do minicurso: Introdução à linguagem R: manipulação e visualização de dados
+## Minicurso: Introdução à linguagem R: manipulação e visualização de dados
 
 **Ministrante** <br>
 Maurício Vancine
