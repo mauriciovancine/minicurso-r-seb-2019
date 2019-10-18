@@ -227,9 +227,9 @@ background-position: 85% 85%
 
 ---
 
-background-image: url(https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/05/Data-Types-350x300.png)
+background-image: url(https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/05/5-298x300.png)
 background-size: 300px
-background-position: 85% 80%
+background-position: 90% 85%
 
 # Minicurso
 
