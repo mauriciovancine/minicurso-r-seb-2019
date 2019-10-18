@@ -2,32 +2,31 @@
 
 ## 30ª Semana de Estudos da Biologia - UNESP - Rio Claro
 
-## Nome do minicurso: Introdução ao geoprocessamento para Etnobiologia e Conservação da Biodiversidade 
+## Nome do minicurso: Introdução à linguagem R: manipulação e visualização de dados
 
 **Ministrante** <br>
-Me. Maurício Humberto Vancine
+Maurício Vancine
 
 **Monitores** <br>
-Helena
-Lucas
+Helena Oliveira <br>
+Lucas Almeida
 
-**Período** <br>
-30/09/2019 - 04/10/2019
-
-**Duração** <br>
+**Carga horária** <br>
 08 horas
 
-**Vagas** <br>
-15 alunos
+**Participantes** <br>
+3-15 pessoas
 
 **Ementa** <br>
+A linguagem R vem se destacando nos últimos anos (desde de 2000), como a principal ferramenta para manejo, visualização e análise de dados, principalmente na área de Ecologia, Psicologia, Economia, e mais recentemente, na Ciência de Dados. Neste curso serão abordados quatro temas introdutórios dessa linguagem: (i) introdução e funcionamento da linguagem R e do software RStudio, (ii) estrutura e manipulação de dados, (iii) introdução ao tidyverse, e (iv) visualização de dados. A carga horária será de aproximadamente 08 horas, onde será focada a parte teórico-prática, intercalada com a realização de exercícios para fixação do conteúdo. Ao final do curso, espera-se que os participantes tenham uma noção geral do funcionamento da linguagem e das potenciais aplicações dentro da área de análise de dados  ecológicos
 
 ---
 
 ### Informações aos participantes
 
 **Datas e horários** <br>
-Teórico-prático: 30/09 – 04/10 [09:00 h - 12:00 h | 14:00 h - 17:00 h]
+23/10 [14:00 h - 18:00 h] 
+24/10 [08:00 h - 12:00 h] 
 
 **Local** <br>
 À definir
@@ -43,7 +42,7 @@ Para mais informações ou dúvidas, envie e-mail para Maurício Vancine (mauric
 ### Instruções aos participantes
 
 **Hardware** <br>
-Será necessário que todos tragam seus próprios notebooks
+Será necessário que todos tragam seus próprios notebooks ou talvez haja computadores...
 
 **Softwares**<br>
 R e RStudio <br>
@@ -53,7 +52,8 @@ R e RStudio <br>
 [Curso da linguagem R](https://www.youtube.com/playlist?list=PLucm8g_ezqNq0RMHvzZ8M32xhopFhmsr6)
 
 
-#### Linux (Ubuntu e Linux Mint)
+#### Linux (Debian, Ubuntu e Linux Mint)
+
 ```
 # r
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
