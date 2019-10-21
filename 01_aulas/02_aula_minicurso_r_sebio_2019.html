@@ -1197,9 +1197,12 @@ search()
 ```
 
 ```
-## [1] ".GlobalEnv"        "package:stats"     "package:graphics" 
-## [4] "package:grDevices" "package:utils"     "package:datasets" 
-## [7] "package:methods"   "Autoloads"         "package:base"
+##  [1] ".GlobalEnv"        "package:forcats"   "package:stringr"  
+##  [4] "package:dplyr"     "package:purrr"     "package:readr"    
+##  [7] "package:tidyr"     "package:tibble"    "package:ggplot2"  
+## [10] "package:tidyverse" "package:stats"     "package:graphics" 
+## [13] "package:grDevices" "package:utils"     "package:datasets" 
+## [16] "package:methods"   "Autoloads"         "package:base"
 ```
 
 --
@@ -1286,18 +1289,6 @@ install.packages("vegan")
 ```r
 # carregar pacotes
 library(vegan)
-```
-
-```
-## Loading required package: permute
-```
-
-```
-## Loading required package: lattice
-```
-
-```
-## This is vegan 2.6-0
 ```
 
 ---
@@ -1682,11 +1673,6 @@ citation("vegan")
 ```
 
 ```
-## Warning in citation("vegan"): no date field in DESCRIPTION file of package
-## 'vegan'
-```
-
-```
 ## 
 ## To cite package 'vegan' in publications use:
 ## 
@@ -1787,9 +1773,7 @@ OBJ
 ggplot(iris) + aes(Sepal.Length, Sepal.Width) + geom_point()
 ```
 
-```
-## Error in ggplot(iris): could not find function "ggplot"
-```
+![](02_aula_minicurso_r_sebio_2019_files/figure-html/unnamed-chunk-68-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -1872,7 +1856,7 @@ Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,
-"countIncrementalSlides": true
+"countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

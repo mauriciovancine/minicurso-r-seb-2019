@@ -215,17 +215,19 @@ background-position: 90% 85%
 <br>
 2.5 Objetos
 <br>
-2.6 Funções
+2.6 Operadores
 <br>
-2.7 Pacotes
+2.7 Funções
 <br>
-2.8 Ambiente (*environment*/*workspace*)
+2.8 Pacotes
 <br>
-2.9 Ajuda (*help*)
+2.9 Ambiente (*environment*/*workspace*)
 <br>
-2.10 Citações
+2.10 Ajuda (*help*)
 <br>
-2.11 Principais erros
+2.11 Citações
+<br>
+2.12 Principais erros
 
 ---
 

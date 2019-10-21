@@ -10,7 +10,7 @@ output:
     nature:
       highlightStyle: github
       highlightLines: true
-      countIncrementalSlides: true
+      countIncrementalSlides: false
     includes:
       in_header: header.html
 ---
@@ -22,7 +22,7 @@ library(tidyverse)
 ```
 
 class: clear, center, middle
-background-image: url(https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/05/Data-Types-350x300.png)
+background-image: url(https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/05/5-298x300.png)
 background-size: 400px
 background-position: 50% 50%
 
