@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>Introdução ao geoprocessamento para Etnobiologia e Conservação da Biodiversidade</title>
+    <title>30ª Semana de Estudos da Biologia    Introdução à linguagem R: manipulação e visualização de dados</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Maurício H. Vancine" />
+    <meta name="author" content="Maurício Vancine   Helena Oliveira   Lucas Almeida" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/5235085b15.js"></script>
   </head>
@@ -11,10 +11,10 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Introdução ao geoprocessamento para Etnobiologia e Conservação da Biodiversidade <br><br>
-## 5 Visualização de dados <br><br> xaringan [presentation ninja]
-### Maurício H. Vancine
-### 30/09/2019
+# 30ª Semana de Estudos da Biologia <br><br> Introdução à linguagem R: manipulação e visualização de dados
+## <br> 5 Visualização de dados <br>
+### Maurício Vancine <br> Helena Oliveira <br> Lucas Almeida <br>
+### <br> xaringan [presentation ninja] <br> 24/10/2019
 
 ---
 
@@ -35,7 +35,7 @@ background-position: 50% 50%
 &lt;br&gt;
 5.2 Principais tipos de gráficos
 &lt;br&gt;
-5.3 Gráficos no R (pacotes *graphics*, *ggplot2*)
+5.3 Gráficos no R (pacotes *graphics*, *ggplot2* e *ggpubr*)
 &lt;br&gt;
 5.4 Histograma (*histogram*)
 &lt;br&gt;
@@ -1820,150 +1820,6 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(https://www.data-to-viz.com/img/section/Correlogram150.png)
-background-size: 300px
-background-position: 50% 80%
-
-# 5.9 Gráfico pareado (pairs plot)
-
-## **Representa os dados de**: muitas colunas
-## **Modo das colunas**: X = numérico e Y = numérico
-## Plota a relação entre duas variáveis contínuas, mas para várias colunas
-
----
-
-class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
-background-size: 400px
-background-position: 50% 50%
-
----
-
-# 5.9 Gráfico pareado (pairs plot)
-
-## Selecionar as colunas
-
-```r
-# selecionar as colunas
-da_sel &lt;- da %&gt;% 
-  select(temperature, precipitation, altitude)
-da_sel
-```
-
-```
-## # A tibble: 1,163 x 3
-##    temperature precipitation altitude
-##          &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;
-##  1        25.0           853      543
-##  2        26.5          1318       15
-##  3        26.4          1248       29
-##  4        26.6          1376       25
-##  5        21.4          1689      750
-##  6        20.4          1249      745
-##  7        21.6          1520      863
-##  8        21.5          1474      878
-##  9        21.8          1450      826
-## 10        25.4          1332       93
-## # … with 1,153 more rows
-```
-
----
-
-# 5.9 Gráfico pareado (pairs plot)
-
-## graphics
-
-```r
-# pairs plot
-pairs(da_sel,
-      pch = 20,
-      upper.panel = NULL)
-```
-
----
-
-# 5.9 Gráfico pareado (pairs plot)
-
-## graphics
-&lt;img src="05_aula_minicurso_r_sebio_2019_files/figure-html/unnamed-chunk-82-1.png" width="60%" style="display: block; margin: auto;" /&gt;
-
----
-
-class: clear, center, middle
-background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/ggplot2.png)
-background-size: 400px
-background-position: 50% 50%
-
----
-
-# 5.9 Gráfico pareado (pairs plot)
-
-## GGally
-
-```r
-# package
-install.packages("GGally")
-library(GGally)
-
-# ggpairs
-ggpairs(data = da_sel) +
-  theme_bw()
-```
-
----
-
-# 5.9 Gráfico pareado (pairs plot)
-
-## GGally
-&lt;img src="05_aula_minicurso_r_sebio_2019_files/figure-html/unnamed-chunk-84-1.png" width="60%" style="display: block; margin: auto;" /&gt;
-
----
-
-class: clear, center, middle
-background-image: url(http://www.sthda.com/english/sthda-upload/images/symplyr/ggpubr-300.png)
-background-size: 400px
-background-position: 50% 50%
-
----
-
-# 5.9 Gráfico pareado (pairs plot)
-
-## psych
-
-```r
-# package
-install.packages("psych")
-library(psych)
-
-# pairs
-pairs.panels(da_sel, 
-             method = "spearman",
-             pch = 20, 
-             ellipses = FALSE, 
-             density = FALSE, 
-             stars = TRUE, 
-             hist.col = "gray",
-             digits = 2,
-             rug = FALSE,
-             breaks = 10,
-             ci = TRUE)
-```
-
----
-
-# 5.9 Gráfico pareado (pairs plot)
-
-## ggpubr
-&lt;img src="05_aula_minicurso_r_sebio_2019_files/figure-html/unnamed-chunk-86-1.png" width="60%" style="display: block; margin: auto;" /&gt;
-
----
-
-class: inverse, middle, center
-
-# Dúvidas?
-
----
-
 class: clear, middle
 
 ## Maurício Vancine
@@ -1985,8 +1841,9 @@ Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
+"highlightStyle": "tomorrow-night-eighties",
 "highlightLines": true,
-"countIncrementalSlides": true
+"countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

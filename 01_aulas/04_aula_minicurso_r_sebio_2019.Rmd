@@ -1,22 +1,24 @@
 ---
-title: "Introdução ao geoprocessamento para Etnobiologia e Conservação da Biodiversidade <br><br>"
-subtitle: "4 Introdução ao tidyverse <br><br> xaringan [presentation ninja]"
-author: "Maurício H. Vancine"
-date: "30/09/2019"
+title: "30ª Semana de Estudos da Biologia <br><br> Introdução à linguagem R: manipulação e visualização de dados"
+subtitle: "<br> 4 Introdução ao tidyverse <br>"
+author: "Maurício Vancine <br> Helena Oliveira <br> Lucas Almeida <br>"
+date: "<br> xaringan [presentation ninja] <br> 24/10/2019"
 output:
   xaringan::moon_reader:
     css: metropolis
     lib_dir: libs
     nature:
-      #highlightStyle: github
+      highlightStyle: rainbow
       highlightLines: true
       countIncrementalSlides: false
     includes:
       in_header: header.html
 ---
 
-```{r, setup, include=FALSE}
+```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(tidyverse)
 ```
 
 class: clear, center, middle

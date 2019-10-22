@@ -13,7 +13,7 @@ class: center, middle, inverse, title-slide
 
 # 30ª Semana de Estudos da Biologia <br><br> Introdução à linguagem R: manipulação e visualização de dados
 ### Maurício Vancine <br> Helena Oliveira <br> Lucas Almeida <br>
-### <br> xaringan [presentation ninja] <br><br> 23-24/10/2019
+### <br> xaringan [presentation ninja] <br><br> 23/10/2019
 
 ---
 
@@ -58,7 +58,7 @@ background-position: 50% 50%
 
 # Helena Oliveira
 
-## Bióloga (202?)
+## Bióloga (2021?)
 
 ### Pesquisa
 - Ecologia de Comunidades
@@ -84,8 +84,10 @@ background-position: 50% 50%
 - Zoologia
 - Herpetologia
 - Avifauna
+- Comportamento
 
 ### Habilidades
+- Naturalista
 - Modelos de Distribuição de Espécies
 - **Open source** [R]
 
@@ -93,6 +95,24 @@ background-position: 50% 50%
 |                                                                                          |                                   |
 | :--------------------------------------------------------------------------------------- | :-------------------------------- |
 | &lt;a href="mailto:almeidals1994@gmail.com"&gt;.RUred[&lt;i class="fa fa-envelope fa-fw"&gt;&lt;/i&gt;]    | almeidals1994@gmail.com           |
+
+---
+
+# Gabriele Farias
+
+## Bióloga (201?)
+
+### Pesquisa
+????
+
+### Habilidades
+????
+- Organizar o minicurso de R
+
+### Contato e informações
+|                                                                                          |                                   |
+| :--------------------------------------------------------------------------------------- | :-------------------------------- |
+| &lt;a href="mailto:gabriele.sfarias@gmail.com"&gt;.RUred[&lt;i class="fa fa-envelope fa-fw"&gt;&lt;/i&gt;] | gabriele.sfarias@gmail.com        |
 
 ---
 
@@ -154,6 +174,8 @@ background-position: 50% 50%
 
 # Minicurso
 
+&lt;br&gt;&lt;br&gt;
+
 ### Duração
 ~08 h
 
@@ -169,10 +191,33 @@ background-position: 50% 50%
 Prática (6 h) &lt;br&gt;
 Exercícios (2 h)
 
---
+---
+
+# Minicurso
+
+## Material
 
 ### Repositório de dados do minicurso no GitHub
 https://github.com/mauriciovancine/minicurso-r-sebio-2019
+
+--
+
+&lt;br&gt;
+
+## Organização no seu computador
+Criem uma pasta chamada `github` em `Documentos` ou na famigerada `Área de Trabalho`
+
+--
+
+Adicionem o arquivo `minicurso-r-sebio-2019-master.zip` nessa pasta
+
+--
+
+Deszipem o arquivo nessa pasta
+
+--
+
+Pronto, arquivos organizados do minicurso =]
 
 ---
 
@@ -214,17 +259,19 @@ background-position: 90% 85%
 &lt;br&gt;
 2.5 Objetos
 &lt;br&gt;
-2.6 Funções
+2.6 Operadores
 &lt;br&gt;
-2.7 Pacotes
+2.7 Funções
 &lt;br&gt;
-2.8 Ambiente (*environment*/*workspace*)
+2.8 Pacotes
 &lt;br&gt;
-2.9 Ajuda (*help*)
+2.9 Ambiente (*environment*/*workspace*)
 &lt;br&gt;
-2.10 Citações
+2.10 Ajuda (*help*)
 &lt;br&gt;
-2.11 Principais erros
+2.11 Citações
+&lt;br&gt;
+2.12 Principais erros
 
 ---
 
@@ -308,8 +355,6 @@ background-position: 75% 75%
 5.7 Gráfico de caixa (*box plot* e *violin plot*)
 &lt;br&gt;
 5.8 Gráfico de dispersão (*scatter plot*)
-&lt;br&gt;
-5.9 Gráfico pareado (*pairs plot*)
 
 ---
 
@@ -317,13 +362,15 @@ background-position: 75% 75%
   
 ## IMPORTANTE!
   
+&lt;br&gt;
+  
 --
   
 ### **Aproveitem** o máximo possível!
   
 --
   
-### **Perguntem** o que não entenderam! Mesmo! Não deixem passar dúvidas!
+### **Perguntem** o que não entenderam! Não deixem passar dúvidas!
   
 --
   
@@ -381,11 +428,11 @@ background-position: 50% 50%
 
 # O R: qual o sentido?
 
-## Precisa de um &lt;u&gt;**objetivo**&lt;/u&gt; para começar a fazer sentido...
+## O R precisa de um &lt;u&gt;**objetivo**&lt;/u&gt; para começar a fazer sentido...
 
 --
 &lt;br&gt;
-### Teremos dois &lt;u&gt;**objetivos**&lt;/u&gt; nesse minicurso:
+### Nesse minicurso teremos dois &lt;u&gt;**objetivos**&lt;/u&gt;:
 
 ### 1. **Manipular ou gerenciar** dados (planilhas) de forma mais fácil, automática e reproduzível
 
@@ -395,7 +442,9 @@ background-position: 50% 50%
 
 --
 
-### &lt;u&gt;**IMPORTANTE**&lt;/u&gt;: Não teremos &lt;u&gt;**estatística**&lt;/u&gt; pela tempo limitado...
+&lt;br&gt;
+
+### &lt;u&gt;**IMPORTANTE**&lt;/u&gt;: não teremos &lt;u&gt;**estatística**&lt;/u&gt; pelo tempo limitado...
 
 ---
 
@@ -426,7 +475,7 @@ Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
+"highlightStyle": "rainbow",
 "highlightLines": true,
 "countIncrementalSlides": false
 });

@@ -2,13 +2,13 @@
 title: "30ª Semana de Estudos da Biologia <br><br> Introdução à linguagem R: manipulação e visualização de dados"
 subtitle: "<br> 3 Estrutura e manipulação de dados <br>"
 author: "Maurício Vancine <br> Helena Oliveira <br> Lucas Almeida <br>"
-date: "<br> xaringan [presentation ninja] <br> 23-24/10/2019"
+date: "<br> xaringan [presentation ninja] <br> 23/10/2019"
 output:
   xaringan::moon_reader:
-    css: [metropolis]
+    css: metropolis
     lib_dir: libs
     nature:
-      highlightStyle: github
+      highlightStyle: rainbow
       highlightLines: true
       countIncrementalSlides: false
     includes:

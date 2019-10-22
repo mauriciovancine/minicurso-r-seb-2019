@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 # 30ª Semana de Estudos da Biologia <br><br> Introdução à linguagem R: manipulação e visualização de dados
 ## <br> 3 Estrutura e manipulação de dados <br>
 ### Maurício Vancine <br> Helena Oliveira <br> Lucas Almeida <br>
-### <br> xaringan [presentation ninja] <br> 23-24/10/2019
+### <br> xaringan [presentation ninja] <br> 23/10/2019
 
 ---
 
@@ -1458,7 +1458,7 @@ pe
 ```
 
 ```
-## [1] 1 1 0 1
+## [1] 1 1 0 0
 ```
 --
 
@@ -1490,7 +1490,7 @@ df
 ## 1 parcela_1  1 trat
 ## 2 parcela_2  1 trat
 ## 3 parcela_3  0 cont
-## 4 parcela_4  1 cont
+## 4 parcela_4  0 cont
 ```
 --
 
@@ -1501,7 +1501,7 @@ str(df)
 ```
 ## 'data.frame':	4 obs. of  3 variables:
 ##  $ pa: Factor w/ 4 levels "parcela_1","parcela_2",..: 1 2 3 4
-##  $ pe: int  1 1 0 1
+##  $ pe: int  1 1 0 0
 ##  $ tr: Factor w/ 2 levels "cont","trat": 2 2 1 1
 ```
 
@@ -1523,7 +1523,7 @@ df_c
 ## [1,] "parcela_1" "1" "2"
 ## [2,] "parcela_2" "1" "2"
 ## [3,] "parcela_3" "0" "1"
-## [4,] "parcela_4" "1" "1"
+## [4,] "parcela_4" "0" "1"
 ```
 --
 
@@ -4820,7 +4820,7 @@ Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
+"highlightStyle": "rainbow",
 "highlightLines": true,
 "countIncrementalSlides": false
 });

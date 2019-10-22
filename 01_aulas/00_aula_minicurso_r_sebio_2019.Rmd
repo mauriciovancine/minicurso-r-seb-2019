@@ -2,13 +2,13 @@
 title: "30ª Semana de Estudos da Biologia <br><br> Introdução à linguagem R: manipulação e visualização de dados"
 subtitle: ""
 author: "Maurício Vancine <br> Helena Oliveira <br> Lucas Almeida <br>"
-date: "<br> xaringan [presentation ninja] <br><br> 23-24/10/2019"
+date: "<br> xaringan [presentation ninja] <br><br> 23/10/2019"
 output:
   xaringan::moon_reader:
-    css: [metropolis]
+    css: metropolis
     lib_dir: libs
     nature:
-      highlightStyle: github
+      highlightStyle: rainbow
       highlightLines: true
       countIncrementalSlides: false
     includes:
@@ -59,7 +59,7 @@ background-position: 50% 50%
 
 # Helena Oliveira
 
-## Bióloga (202?)
+## Bióloga (2021?)
 
 ### Pesquisa
 - Ecologia de Comunidades
@@ -85,8 +85,10 @@ background-position: 50% 50%
 - Zoologia
 - Herpetologia
 - Avifauna
+- Comportamento
 
 ### Habilidades
+- Naturalista
 - Modelos de Distribuição de Espécies
 - **Open source** [R]
 
@@ -94,6 +96,24 @@ background-position: 50% 50%
 |                                                                                          |                                   |
 | :--------------------------------------------------------------------------------------- | :-------------------------------- |
 | <a href="mailto:almeidals1994@gmail.com">.RUred[<i class="fa fa-envelope fa-fw"></i>]    | almeidals1994@gmail.com           |
+
+---
+
+# Gabriele Farias
+
+## Bióloga (201?)
+
+### Pesquisa
+????
+
+### Habilidades
+????
+- Organizar o minicurso de R
+
+### Contato e informações
+|                                                                                          |                                   |
+| :--------------------------------------------------------------------------------------- | :-------------------------------- |
+| <a href="mailto:gabriele.sfarias@gmail.com">.RUred[<i class="fa fa-envelope fa-fw"></i>] | gabriele.sfarias@gmail.com        |
 
 ---
 
@@ -155,6 +175,8 @@ background-position: 50% 50%
 
 # Minicurso
 
+<br><br>
+
 ### Duração
 ~08 h
 
@@ -170,10 +192,33 @@ background-position: 50% 50%
 Prática (6 h) <br>
 Exercícios (2 h)
 
---
+---
+
+# Minicurso
+
+## Material
 
 ### Repositório de dados do minicurso no GitHub
 https://github.com/mauriciovancine/minicurso-r-sebio-2019
+
+--
+
+<br>
+
+## Organização no seu computador
+Criem uma pasta chamada `github` em `Documentos` ou na famigerada `Área de Trabalho`
+
+--
+
+Adicionem o arquivo `minicurso-r-sebio-2019-master.zip` nessa pasta
+
+--
+
+Deszipem o arquivo nessa pasta
+
+--
+
+Pronto, arquivos organizados do minicurso =]
 
 ---
 
@@ -311,8 +356,6 @@ background-position: 75% 75%
 5.7 Gráfico de caixa (*box plot* e *violin plot*)
 <br>
 5.8 Gráfico de dispersão (*scatter plot*)
-<br>
-5.9 Gráfico pareado (*pairs plot*)
 
 ---
 
@@ -320,13 +363,15 @@ background-position: 75% 75%
   
 ## IMPORTANTE!
   
+<br>
+  
 --
   
 ### **Aproveitem** o máximo possível!
   
 --
   
-### **Perguntem** o que não entenderam! Mesmo! Não deixem passar dúvidas!
+### **Perguntem** o que não entenderam! Não deixem passar dúvidas!
   
 --
   
@@ -384,11 +429,11 @@ background-position: 50% 50%
 
 # O R: qual o sentido?
 
-## Precisa de um <u>**objetivo**</u> para começar a fazer sentido...
+## O R precisa de um <u>**objetivo**</u> para começar a fazer sentido...
 
 --
 <br>
-### Teremos dois <u>**objetivos**</u> nesse minicurso:
+### Nesse minicurso teremos dois <u>**objetivos**</u>:
 
 ### 1. **Manipular ou gerenciar** dados (planilhas) de forma mais fácil, automática e reproduzível
 
@@ -398,7 +443,9 @@ background-position: 50% 50%
 
 --
 
-### <u>**IMPORTANTE**</u>: Não teremos <u>**estatística**</u> pela tempo limitado...
+<br>
+
+### <u>**IMPORTANTE**</u>: não teremos <u>**estatística**</u> pelo tempo limitado...
 
 ---
 
