@@ -34,7 +34,7 @@ background-position: 50% 50%
 <br>
 3.2 Modos dos objetos (*numeric*, *character* e *logical*)
 <br>
-3.3 Estrutura dos objetos (*vector*, *factor*, *matrix*, *data frame* e *list*)
+3.3 Estrutura dos objetos (*vector*, *factor*, *matrix*, *array*, *data frame* e *list*)
 <br>
 3.4 Manejo de dados unidimensionais
 <br>
@@ -49,6 +49,15 @@ background-position: 50% 50%
 3.9 Conferir e manejar dados importados
 <br>
 3.10 Exportar dados
+
+---
+
+# 3 Estrutura e manejo de dados
+## Script
+
+<br><br><br><br><br><br>
+
+## .center[`script_aula_03.R`]
 
 ---
 
@@ -94,11 +103,13 @@ obj_10
 
 ---
 
+background-image: url(figs/r_modes.png)
+background-size: 70%
+background-position: 50% 85%
+
 # 3.2 Modos dos objetos
 
 ## Modos (*natureza*): numeric, character e logical
-
---
 
 ### **Natureza** dos **elementos** que compõem os objetos
 
@@ -106,7 +117,7 @@ obj_10
 
 # 3.2 Modos dos objetos
 
-## **Numeric**: números inteiros ou decimais
+## **1. Numeric**: números inteiros ou decimais
 ```{r}
 # numeric
 obj_num <- 1
@@ -122,7 +133,7 @@ mode(obj_num)
 
 # 3.2 Modos dos objetos
 
-### 2. **character**: texto
+## **2. Character**: texto
 
 --
 ```{r}
@@ -140,7 +151,7 @@ mode(obj_cha)
 
 # 3.2 Modos dos objetos
 
-### 3. **logical**: assume apenas dois valores (booleano)
+## **3. Logical**: assume apenas dois valores (TRUE ou FALSE - booleano)
 
 --
 
@@ -170,7 +181,7 @@ mode(obj_log)
 ## Modos (*natureza*) são **três**: 
 
 ### numeric (**número**): *1*
-### character (**texto**): *"a"* ou *"2500"*
+### character (**texto**): *"a"*, *"2500"*, *"amostra_01"*
 ### logical (**lógico**): *TRUE* ou *FALSE*
 
 ---
@@ -183,7 +194,7 @@ class: inverse, middle, center
 
 # 3.3 Estrutura dos objetos
 
-## Estruturas (*organização*): vector, factor, matrix, data frame e list
+## Estruturas (*organização*): vector, factor, matrix, array, data frame e list
 
 --
 
@@ -191,14 +202,14 @@ class: inverse, middle, center
 
 --
 
-background-image: url(https://devopedia.org/images/article/46/7262.1526126010.png)
-background-size: 650px
+background-image: url(figs/data_structures.png)
+background-size: 450px
 background-position: 50% 90%
 
 ---
 
-background-image: url(http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png)
-background-size: 800px
+background-image: url(figs/data_structures2.png)
+background-size: 650px
 background-position: 50% 50%
 
 # 3.3 Estrutura dos objetos
@@ -210,8 +221,6 @@ background-size: 800px
 background-position: 50% 50%
 
 # 3.3 Estrutura dos objetos
-
-## **1. Vector**
 
 ---
 
@@ -219,29 +228,46 @@ background-position: 50% 50%
 
 ## **1. Vector**: homogêneo (*um modo*) e unidimensional (*uma dimensão*)
 
---
-
 ### O **vetor** representa medidas de uma **variável quantitativa** (discretas ou contínuas) ou **descrição** (informações em texto)
 
 --
 
 ### Ex.: medidas tomadas em campo ao longo de uma amostragem de 5 meses
 
---
-
 1. Amostragens: {"amostra_01", "amostra_02", "amostra_03", "amostra_04", "amostra_05"}
-
---
-
 2. Temperatura: {15, 18, 20, 22, 18}
-
---
-
-3. Abertura do dossel: {0.37, 0.45, 0.65, 0.75, 0.40}
-
---
-
+3. Abertura do dossel: {0.37, 0.45, 0.65, 0.75, 0.40
 4. Abundância de uma espécie: {6, 3, 0, 0, 2}
+
+---
+
+background-image: url(figs/vector_math.jpg)
+background-size: 500px
+background-position: 50% 70%
+
+# 3.3 Estrutura dos objetos
+
+## Não me refiro exatamente ao vetor da matemática
+
+---
+
+background-image: url(figs/vector_types.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 3.3 Estrutura dos objetos
+
+## Sequência de elementos
+
+---
+
+background-image: url(figs/vector_summary_tree.png)
+background-size: 550px
+background-position: 50% 70%
+
+# 3.3 Estrutura dos objetos
+
+## Tipos
 
 ---
 
@@ -253,13 +279,14 @@ background-position: 50% 50%
 
 ### 1. Concatenar elementos
 ```{r}
-# concatenar elementos
+# concatenar elementos numericos
 temp <- c(15, 18, 20, 22, 18)
 temp
 ```
 <br>
 --
 ```{r}
+# concatenar elementos de texto
 amos <- c("amostra_01", "amostra_02", "amostra_03", "amostra_04")
 amos
 ```
@@ -294,14 +321,13 @@ se.e
 ```{r}
 # repeticao
 # rep(x, times) # repete x tantas vezes
-# rep(x, each) # retete x tantas vezes de cada
-
 rep_times <- rep(x = c(1, 2), times = 5)
 rep_times
 ```
 <br>
 --
 ```{r}
+# rep(x, each) # retete x tantas vezes de cada
 rep_each <- rep(x = c("a", "b"), each = 5)
 rep_each
 ```
@@ -315,16 +341,95 @@ rep_each
 ### 4. "Colar" palavras com uma sequência numérica
 
 ```{r}
-# palavra e sequencia numerica - sem separacao
-am1 <- paste("amostra", 1:6, sep = "0")
+# palavra e sequencia numerica - sem separacao definida (" ")
+am1 <- paste("amostra", 1:5)
 am1
 ```
 <br>
 --
 ```{r}
-# palavra e sequencia numerica - separacao por "_"
-am2 <- paste("amostra", 1:6, sep = "_0")
+# palavra e sequencia numerica - separacao por "_0"
+am2 <- paste("amostra", 1:5, sep = "_0")
 am2
+```
+
+---
+
+# 3.3 Estrutura dos objetos
+
+### Há diversas formas de se criar um **vetor**:
+
+### 5. Amostrando aleatoriamente elementos
+
+```{r}
+# amostragem aleatória - sem reposição
+sa_sem_rep <- sample(1:100, 10)
+sa_sem_rep
+```
+
+--
+
+```{r}
+# amostragem aleatória - com reposição
+sa_com_rep <- sample(1:10, 100, replace = TRUE)
+sa_com_rep
+```
+
+---
+
+class: clean, inverse, middle, center
+# Exercícios
+
+---
+
+# Exercício 06
+
+## Vector
+### Criem uma sequência de 0 à 50, espaçada de 5 em 5. 
+### Atribuam à um objeto chamado "seq_50"
+### Repitam os elementos desse objeto 10 vezes sequencialmente, atribuindo ao objeto "seq_50_rep_times"
+
+--
+
+```{r}
+# solucao
+seq_50 <- seq(0, 50, by = 5)
+seq_50
+```
+
+```{r, results = "hide"}
+seq_50_rep_times <- rep(seq_50, times = 10)
+seq_50_rep_times
+```
+
+---
+
+# Exercício 07
+
+## Vector
+### Escolham números para jogar na mega-sena
+### Lembrando: são 6 valores de 1 a 60 e atribuam a um objeto
+
+--
+
+```{r}
+mega_num <- sample(1:60, 6, replace = FALSE)
+mega_num
+```
+
+---
+
+# Exercício 08
+
+## Vector
+### Einstein disse que Deus não joga dados, mas o R joga!
+### Simulem o resultado de 25 jogadas de um dado e atribuam a um objeto
+
+--
+
+```{r}
+dado_25 <- sample(1:6, 25, rep = TRUE)
+dado_25
 ```
 
 ---
@@ -364,83 +469,17 @@ ve
 
 # Coerção
 
-## Mudança do **modo** dos elementos para um **mesmo modo**
+### Mudança do **modo** dos elementos para um **mesmo modo**
 
-<br><br><br>
-
---
-
-## Essa mudança segue essa ordem:
+### Essa mudança segue essa ordem:
 
 ### `DOMINANTE` **character** >> **numeric** >> **logical** `RECESSIVO`
 
----
-
-# Coerção
-
-## **character** >> **numeric**
-
-```{r}
-ve <- c("a", 1)
-ve
-```
 --
-```{r}
-class(ve)
 
-mode(ve)
-```
-
----
-
-# Coerção
-
-## **numeric** >> **logical**
-
-```{r}
-ve <- c(1, TRUE)
-ve
-```
---
-```{r}
-class(ve)
-
-mode(ve)
-```
-
----
-
-# Coerção
-
-## **character** >> **logical**
-
-```{r}
-ve <- c("a", TRUE)
-ve
-```
---
-```{r}
-class(ve)
-
-mode(ve)
-```
-
----
-
-# Coerção
-
-## **character** >> **numeric** >> **logical**
-
-```{r}
-ve <- c("a", 1, TRUE)
-ve
-```
---
-```{r}
-class(ve)
-
-mode(ve)
-```
+background-image: url(figs/r_modes.png)
+background-size: 60%
+background-position: 50% 85%
 
 ---
 
@@ -454,74 +493,13 @@ mode(ve)
 
 --
 
-### Vetor **numeric**
-```{r}
-ve <- c(0, 1, 2, 3, 4)
-ve
-```
---
-```{r}
-mode(ve)
-```
-
----
-
-# Conversão
-
-## Podemos **forçar** um vetor a ter um **modo específico**
-
-### Forçar a ser **character**, vindo de um **numeric**
-```{r}
-ve
-```
---
-```{r}
-ve_ch <- as.character(ve)
-ve_ch
-```
---
-```{r, error = TRUE}
-mode(ve_ch)
-```
-
----
-
-# Conversão
-
-## Podemos **forçar** um vetor a ter um **modo específico**
-
-### Forçar a ser **logical**, vindo de um **numeric**
-```{r}
-ve
-```
---
-```{r}
-ve_lo <- as.logical(ve)
-ve_lo
-```
---
-```{r, error = TRUE}
-mode(ve_lo)
-```
-
----
-
-# Conversão
-
-## Podemos **forçar** um vetor a ter um **modo específico**
-
-### Forçar a ser **numeric**, vindo de um **character**
-```{r}
-ve_ch
-```
---
-```{r}
-ve_nu <- as.numeric(ve_ch)
-ve_nu
-```
---
-```{r, error = TRUE}
-mode(ve_nu)
+### Conversão
+```{r,eval=FALSE}
+# funcoes
+as.character()
+as.integer()
+as.numeric()
+as.logical()
 ```
 
 ---
@@ -529,16 +507,6 @@ mode(ve_nu)
 class: inverse, middle, center
 
 # Dúvidas?
-
----
-
-background-image: url(http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png)
-background-size: 800px
-background-position: 50% 50%
-
-# 3.3 Estrutura dos objetos
-
-## **2. Factor**
 
 ---
 
@@ -553,18 +521,19 @@ background-position: 50% 50%
 --
 
 ### Ex.: medidas tomadas em campo ao longo de uma amostragem de 6 meses
-
---
-
 1. Amostragens: {"amostra_01", "amostra_02", "amostra_03", "amostra_04", "amostra_05"}
-
---
-
 2. Tipo de floresta: {fechada, fechada, aberta, aberta, aberta}
-
---
-
 3. Abundância de uma espécie: {alta, media, baixa, baixa, media}
+
+---
+
+background-image: url(figs/factor.png)
+background-size: 70%
+background-position: 50% 75%
+
+# 3.3 Estrutura dos objetos
+
+## **2. Factor**: homogêneo (*um modo* - sempre *numeric*), unidimensional (*uma dimensão*) e possui ainda **levels** (níveis)
 
 ---
 
@@ -640,6 +609,31 @@ class(fa_no)
 
 ---
 
+class: clean, inverse, middle, center
+# Exercícios
+
+---
+
+# Exercício 09
+
+## Factor
+### Criem um fator chamado "tr", com dois níveis ("cont" e "trat") para descrever 100 locais de amostragem, 50 de cada tratamento. O fator deve ser dessa forma:
+
+`cont, cont, cont, ...., cont, trat, trat, ...., trat`
+
+--
+
+```{r, eval = FALSE}
+# solucao 1
+ch <- rep(c("cont", "trat"), each = 50)
+ch
+          
+tr <- as.factor(ch)
+tr
+```
+
+---
+
 background-image: url(http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png)
 background-size: 800px
 background-position: 50% 50%
@@ -664,17 +658,15 @@ background-position: 50% 50%
 
 ---
 
+background-image: url(https://www.neonscience.org/sites/default/files/images/R/matrix.png)
+background-size: 630px
+background-position: 130% 200%
+
 # 3.3 Estrutura dos objetos
 
 ## **3. Matrix**: homogêneo (*um modo*) e bidimensional (*duas dimensão*)
 
 ### Ex.: espécies amostradas 5 locais
-
---
-
-background-image: url(https://www.neonscience.org/sites/default/files/images/R/matrix.png)
-background-size: 630px
-background-position: 130% 150%
 
 ---
 
@@ -694,10 +686,10 @@ background-position: 50% 60%
 
 ---
 
-class: inverse, center, middle
+class: clear, inverse, center, middle
 background-image: url(https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif)
 background-size: 700px
-background-position: 50% 60%
+background-position: 50% 50%
 
 ---
 
@@ -736,7 +728,7 @@ ma_row
 # vetor
 ve <- 1:12
 ```
---
+
 ```{r}
 # matrix - preenchimento por colunas - vertical
 ma_col <- matrix(data = ve, nrow = 4, ncol = 3, byrow = FALSE)
@@ -782,7 +774,7 @@ ma_rbind
 vec_1 <- c(1, 2, 3)
 vec_2 <- c(4, 5, 6)
 ```
---
+
 ```{r}
 # combinar por colunas - horizontal - um ao lado do outro
 ma_cbind <- cbind(vec_1, vec_2)
@@ -791,30 +783,24 @@ ma_cbind
 
 ---
 
-# 3.3 Estrutura dos objetos
-
-## Coerção
-```{r}
-# criar dois vetores
-vec_ch <- c("sp1", "sp2", "sp3")
-vec_nu <- c(4, 5, 6)
-```
---
-```{r}
-# combinar por colunas - horizontal - um ao lado do outro
-ma_ch <- cbind(vec_ch, vec_nu)
-ma_ch
-```
+class: clean, inverse, middle, center
+# Exercícios
 
 ---
 
-# 3.3 Estrutura dos objetos
+# Exercício 10
 
-## **3. Matrix**: homogêneo (*um modo*), bidimensional (*duas dimensão*)
+## Matrix
 
-## Essa mudança também segue a ordem:
+### Criem uma matriz chamada "ma", resultante da disposição de um vetor composto por 10000 valores aleatórios entre 0 e 10. A matriz deve conter 100 linhas e ser disposta por colunas
 
-### `DOMINANTE` **character** >> **numeric** >> **logical** `RECESSIVO`
+--
+
+```{r, eval = FALSE}
+# solucao
+ma <- matrix(sample(0:10, 10000, rep = TRUE), nrow = 100, byrow = FALSE)
+ma
+```
 
 ---
 
@@ -844,7 +830,7 @@ background-position: 50% 100%
 
 ---
 
-class: inverse, center, middle
+class: clear, inverse, center, middle
 background-image: url(https://media.giphy.com/media/11ahZZugJHrdLO/giphy.gif)
 background-size: 700px
 background-position: 50% 50%
@@ -870,7 +856,6 @@ ve
 background-image: url(https://www.neonscience.org/sites/default/files/images/R/array.png)
 background-size: 350px
 background-position: 80% 85%
-
 
 # 3.3 Estrutura dos objetos
 
@@ -958,7 +943,7 @@ background-position: 50% 60%
 
 class: inverse, middle, center
 
-# Ótimo, porque é justamente esse o formato de entrada dos dados de planilhas eletrônicas!
+# Esse é justamente o formato de entrada dos dados de planilhas eletrônicas!
 
 ---
 
@@ -1006,50 +991,6 @@ df <- data.frame(especies = vec_ch,
                  abundancia = vec_nu, 
                  vegetacao = vec_fa)
 df
-```
-
----
-
-# 3.3 Estrutura dos objetos
-
-## Coerção de **data frame** para **matrix**
-```{r}
-# coercao de data frame para matrix
-ma <- as.matrix(df)
-ma
-```
-
-### Seguindo aquela hierarquia
-### `DOMINANTE` **character** >> **numeric** >> **logical** `RECESSIVO`
-
----
-
-# 3.3 Estrutura dos objetos
-
-## Coerção de **matrix** para **data frame**
-```{r}
-# coercao de matrix para data frame
-df <- as.data.frame(ma)
-df
-```
---
-```{r}
-str(df)
-```
-
----
-
-# 3.3 Estrutura dos objetos
-
-## Coerção de **matrix** para **data frame**
-```{r}
-# coercao de matrix para data frame
-df <- as.data.frame(ma, stringsAsFactors = FALSE)
-df
-```
---
-```{r}
-str(df)
 ```
 
 ---
@@ -1109,6 +1050,47 @@ str(df_c)
 
 ---
 
+class: clean, inverse, middle, center
+# Exercícios
+
+---
+
+# Exercício 11
+
+## Data frame
+
+### Criem um data frame "df", resultante da composição desses vetores: 
+`id: 1:50`
+
+`sp: sp01, sp02, ..., sp49, sp50`
+
+`ab: 50 valores aleatórios entre 0 a 5`
+
+---
+
+# Exercício 11
+
+## Data frame
+
+### Criem um data frame "df", resultante da composição desses vetores: 
+
+```{r, eval = FALSE}
+# solucao
+id <- 1:50
+id
+
+sp <- c(paste("sp", 1:9, sep = "0"), paste("sp", 10:50, sep = ""))
+sp
+
+ab <- sample(0:5, 50)
+ab
+
+df <- data.frame(id, sp, ab)
+df
+```
+
+---
+
 background-image: url(http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png)
 background-size: 800px
 background-position: 50% 50%
@@ -1137,7 +1119,7 @@ background-position: 50% 50%
 
 --
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/list.png)
+background-image: url(figs/list.png)
 background-size: 300px
 background-position: 50% 95%
 
@@ -1156,20 +1138,6 @@ li
 
 ---
 
-# 3.4 Manejo de dados unidimensionais
-
-## Vetor e fator
-
-### **1. Indexação []**: acessa elementos de vetores e fatores
-```{r}
-## indexacao []
-# vetor
-ve <- seq(10, 100, 10)
-ve
-```
-
----
-
 class: inverse, middle, center
 
 # Dúvidas?
@@ -1179,6 +1147,26 @@ class: inverse, middle, center
 class: inverse, middle, center
 
 # Bora manejar isso tudo?
+
+---
+
+# 3.4 Manejo de dados unidimensionais
+
+## Vetor e fator
+
+### **1. Indexação []**: acessa elementos de vetores e fatores
+```{r}
+## indexacao []
+# fixar a amostragem
+set.seed(42)
+
+# vetor
+se <- seq(0, 5, .01)
+se
+
+ve <- sample(se, 10)
+ve
+```
 
 ---
 
@@ -1232,12 +1220,6 @@ ve_sub
 
 ---
 
-class: inverse, center, middle
-
-# Dúvidas?
-
----
-
 # 3.4 Manejo de dados unidimensionais
 
 ## Vetor e fator
@@ -1267,19 +1249,8 @@ foo <= bar # menor ou igual
 
 ### **2 Seleção condicional**: selecionar elementos por condições 
 ```{r}
-# fixar a amostragem
-set.seed(42)
-```
---
-```{r}
-# vetor
-ve <- rnorm(10)
-ve
-```
---
-```{r}
 # quais valores sao maiores que 1?
-ve > 1 
+ve > 1
 ```
 
 ---
@@ -1306,7 +1277,7 @@ ve_maior1
 
 ## Vetor e fator
 
-### **3 Funções de manejo**: *max*, *min*, *range*, *length*, *sort*, *order* e *round*
+### **3 Funções de manejo**: *max*, *min*, *range*, *length*, *sort*, e *round*
 ```{r}
 # maximo
 max(ve)
@@ -1323,7 +1294,7 @@ min(ve)
 
 ## Vetor e fator
 
-### **3 Funções de manejo**: *max*, *min*, *range*, *length*, *sort*, *order* e *round*
+### **3 Funções de manejo**: *max*, *min*, *range*, *length*, *sort*, e *round*
 ```{r}
 # amplitude
 range(ve)
@@ -1359,28 +1330,6 @@ sort(ve, dec = TRUE)
 
 ### **3 Funções de manejo**: *max*, *min*, *range*, *length*, *sort* e *round*
 ```{r}
-# mostrar a ordem da ordenacao crescente
-order(ve)
-```
---
-```{r}
-# mostrar a ordem da ordenacao decrescente
-order(ve, decreasing = TRUE)
-```
---
-```{r}
-# mostrar a ordem da ordenacao "sort"
-order(sort(ve))
-```
-
----
-
-# 3.4 Manejo de dados unidimensionais
-
-## Vetor e fator
-
-### **3 Funções de manejo**: *max*, *min*, *range*, *length*, *sort* e *round*
-```{r}
 # arredondamento
 ve
 ```
@@ -1388,11 +1337,6 @@ ve
 ```{r}
 # arredondamento
 round(ve, digits = 1)
-```
---
-```{r}
-# arredondamento
-round(ve, 3)
 ```
 
 ---
@@ -1436,80 +1380,16 @@ ifelse(ve > 1, 1, 0)
 
 ---
 
-class: inverse, center, middle
-
-# Dúvidas?
-
----
-
-# 3.4 Manejo de dados unidimensionais
-
-## Listas
-
-### **1. Indexação []**: acessa elementos de listas
-```{r}
-## indexacao []
-# lista
-li <- list(elem1 = 1, elem2 = 2, elem3 = 3)
-li
-```
+class: clean, inverse, middle, center
+# Exercícios
 
 ---
 
-# 3.4 Manejo de dados unidimensionais
+# Exercício 12
 
-## Listas
+## Manejo de dados unidimensionais 
+### Alguns problemas:
 
-### **1. Indexação []**: acessa elementos de listas
-
-### Selecionar elementos
-```{r}
-# acessar o primeiro elemento
-li[1]
-```
---
-```{r}
-# acessar o primeiro e o terceiro elementos e atribuir
-li2 <- li[c(1, 3)]
-li2
-```
-
----
-
-# 3.4 Manejo de dados unidimensionais
-
-## Listas
-
-### **1. Indexação []**: acessa elementos de listas
-
-### Retirar elementos
-```{r}
-# retirar o primeiro elemento
-li[-1]
-```
---
-```{r}
-# retirar o segundo elemento e atribuir
-li_13 <- li[-2]
-li_13
-```
-
----
-
-# 3.4 Manejo de dados unidimensionais
-
-## Listas
-
-### **3. Funções**: *length* e *names*
-```{r}
-# comprimento
-length(li)
-```
---
-```{r}
-# names
-names(li)
-```
 
 ---
 
@@ -1780,340 +1660,6 @@ df[df$flo == "floresta", ]
 
 ---
 
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-```{r}
-head(df)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-```{r}
-head(df, 10)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-```{r}
-tail(df)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-```{r}
-nrow(df)
-```
---
-```{r}
-ncol(df)
-```
---
-```{r}
-dim(df)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-```{r}
-rownames(df)
-```
---
-```{r}
-colnames(df)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-
-### Mudar o nome das linhas
-```{r}
-df
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-
-### Mudar o nome das linhas
-```{r}
-rownames(df)
-```
---
-```{r}
-rownames(df) <- c(paste("local", 1:9, sep = "_0"), "local_10")
-```
---
-```{r}
-rownames(df)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-
-### Mudar o nome das linhas
-```{r}
-df
-```
-
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-```{r}
-str(df)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-```{r}
-summary(df)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-```{r}
-# criar uma matriz
-ma <- matrix(c(12, 5, 8, 0, 15, 0, 0, 2, 7), 3)
-ma
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-
-### **rowSums()**: calcula a soma das linhas - horizontal - soma a abundância das espécies por local de amostragem
-```{r}
-# matriz
-ma
-
-# soma das linhas
-rowSums(ma)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-
-### **colSums()**: calcula a soma das colunas - vertical - soma a abundância total por espécie
-```{r}
-# matriz
-ma
-
-# soma das colunas
-colSums(ma)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-
-### **rowMeans()**: calcula a média das linhas - horizontal - calcula a média das abundância das espécies por local de amostragem
-```{r}
-# matriz
-ma
-
-# media das linhas
-rowMeans(ma)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **3 Funções de visualização e manejo**
-
-### **colMeans()**: calcula a média das colunas - vertical - calcula a média da abundância por espécie
-```{r}
-# matriz
-ma
-
-# media das linhas
-colMeans(ma)
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **4 Amostragem de linhas**
-```{r}
-## amostragem de linhas
-n_row <- 1:10
-n_row
-```
---
-```{r}
-n_row_sa <- sample(n_row, 4)
-n_row_sa
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **4 Amostragem de linhas**
-```{r}
-df_sa <- df[n_row_sa, ]
-df_sa
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **4 Amostragem de linhas**
-```{r}
-# fixar amostragem
-set.seed(5)
-
-# amostragem de linhas
-n_row <- 1:10
-n_row
-```
---
-```{r}
-n_row_sa <- sample(n_row, 4)
-n_row_sa
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **4 Amostragem de linhas**
-```{r}
-df_sa <- df[n_row_sa, ]
-df_sa
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **5 Ordenação de linhas**
-```{r}
-# ordencao de linhas
-df_so <- df[order(df$abu, decreasing = TRUE), ]
-df_so
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **5 Ordenação de linhas**
-```{r}
-# ordencao de linhas
-df_so <- df[order(df$abu, decreasing = FALSE), ]
-df_so
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **6 Subconjunto**
-```{r}
-# filtro
-df_su <- subset(df, flo == "floresta")
-df_su
-```
-
----
-
-# 3.5 Manejo de dados bidimensionais
-
-## Matrizes e Data Frames
-
-### **6 Subconjunto**
-
-```{r}
-# filtro
-df_su <- subset(df, abu2 == 1)
-df_su
-```
-
----
-
 class: inverse, middle, center
 
 # Dúvidas?
@@ -2302,7 +1848,7 @@ class: inverse, middle, center
 # pasta onde o r ira importar e exportar os arquivos
 
 # definir o diretorio de trabalho
-setwd("/home/mude/data/github/disciplina-geoprocessamento/03_dados/00_tabelas")
+setwd("/home/mude/data/github/minicurso-r-sebio-2019/03_dados")
 ```
 --
 ```{r, eval = FALSE}
@@ -2575,9 +2121,9 @@ nrow(da_na)
 
 ## Subset das linhas
 ```{r}
-# subset das linhas com amostragens em pernambuco
-da_per <- da[da$state == "Pernambuco", ]
-da_per
+# subset das linhas com amostragens em sao paulo
+da_sp <- da[da$state == "São Paulo", ]
+da_sp
 ```
 
 ---
@@ -2596,7 +2142,7 @@ class: inverse, center, middle
 
 ### Planilha eletrônica (.csv)
 ```{r, eval = FALSE}
-write.csv(da_per, "ATLANTIC_AMPHIBIAN_sites_pernambuco.csv", 
+write.csv(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.csv", 
           row.names = FALSE, quote = FALSE)
 ```
 
@@ -2604,15 +2150,15 @@ write.csv(da_per, "ATLANTIC_AMPHIBIAN_sites_pernambuco.csv",
 
 ### Planilha de texto (.txt)
 ```{r, eval = FALSE}
-write.table(da_per, "ATLANTIC_AMPHIBIAN_sites_pernambuco.txt", 
+write.table(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.txt", 
             row.names = FALSE, quote = FALSE)
 ```
 
 --
 
 ### Planilha eletrônica (.xlsx)
-```{r, warning = FALSE}
-openxlsx::write.xlsx(da_per, "ATLANTIC_AMPHIBIAN_sites_pernambuco.xlsx", 
+```{r, eval = FALSE, warning = FALSE}
+openxlsx::write.xlsx(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.xlsx", 
                      row.names = FALSE, quote = FALSE)
 ```
 

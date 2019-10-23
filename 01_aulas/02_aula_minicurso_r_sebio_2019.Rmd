@@ -18,7 +18,6 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-library(tidyverse)
 ```
 
 class: clear, center, middle
@@ -47,9 +46,9 @@ background-position: 50% 50%
 <br>
 2.8 Pacotes
 <br>
-2.9 Ambiente (*environment*/*workspace*)
+2.9 Ajuda (*help*)
 <br>
-2.10 Ajuda (*help*)
+2.10 Ambiente (*environment*/*workspace*)
 <br>
 2.11 Citações
 <br>
@@ -57,7 +56,7 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/rstudio.png)
+background-image: url(figs/rstudio.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -65,7 +64,7 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/rstudio.png)
+background-image: url(figs/rstudio.png)
 background-size: 700px
 background-position: 50% 70%
 
@@ -77,7 +76,7 @@ background-position: 50% 70%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/programar.png)
+background-image: url(figs/programar.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -144,11 +143,11 @@ background-position: 50% 70%
 
 ## Programar
 
-### ...principalmente quando acontecer um erro...
+### Principalmente quando acontecer um erro...
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/script1.png)
+background-image: url(figs/script1.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -156,7 +155,7 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/script2.png)
+background-image: url(figs/script2.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -166,7 +165,7 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/script3.png)
+background-image: url(figs/script3.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -174,7 +173,7 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/rstudio_console.png)
+background-image: url(figs/rstudio_console.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -182,7 +181,7 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/rstudio_console.png)
+background-image: url(figs/rstudio_console.png)
 background-size: 500px
 background-position: 50% 98%
 
@@ -222,7 +221,7 @@ background-position: 50% 98%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/rstudio_console_func.png)
+background-image: url(figs/rstudio_console_func.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -232,7 +231,13 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/script3.png)
+class: inverse, center, middle
+
+# Dúvidas?
+
+---
+
+background-image: url(figs/script3.png)
 background-size: 700px
 background-position: 50% 85%
 
@@ -254,11 +259,22 @@ background-position: 50% 85%
 
 ### Isso é texto, não digite no R!
 
+--
+
 <br>
 
-```{r}
+### Digitar no script
+```{r,eval=FALSE}
 print("Isso é o resultado que deve aparecer no console")
 ```
+
+--
+
+### Resultado no console
+```{r,echo=FALSE}
+print("Isso é o resultado que deve aparecer no console")
+```
+
 
 ---
 
@@ -290,7 +306,7 @@ background-position: 50% 90%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/script4.png)
+background-image: url(figs/script4.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -351,9 +367,9 @@ background-position: 50% 50%
 
 # Vamos padronizar
 
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 
-## .center[script_aula_02.R]
+## .center[`script_aula_02.R`]
 
 ---
 
@@ -369,7 +385,7 @@ background-position: 50% 50%
 
 --
 
-## 3. Abram o script salvo
+## 3. Abram o script salvo `script_aula_02.R`
 
 --
 
@@ -436,7 +452,7 @@ class: inverse, middle, center
 ### aula 02 - funcionamento do r ###
 
 # seu nome
-# 30-09-2019
+# 22-10-2019
 ```
 
 --
@@ -447,8 +463,53 @@ class: inverse, middle, center
 ## comentarios
 # o r nao le o codigo depois do # (hash)
 
-42 # esses palavras nao sao executadas, apenas o 42
+42 # essas palavras nao sao executadas, apenas o 42
 ```
+
+---
+
+class: clear, inverse, middle, center
+# Vocês são organizados?
+
+---
+
+class: clean, inverse, middle, center
+# Aqui organização funciona como seleção natural... =]
+
+---
+
+class: inverse, center, middle
+background-image: url(https://media0.giphy.com/media/xT1XGMZdyChId6fvIk/giphy.gif)
+background-size: 700px
+background-position: 50% 50%
+
+---
+
+# Organização dos scripts
+
+### Se você vai usar o R para fazer suas análises, a primeira coisa é ser organizado
+
+<br>
+
+--
+
+### Separe as linhas das análises e comente cada comando
+
+<br>
+
+--
+
+### Você vai se agradecer no futuro =]
+
+--
+
+<br><br>
+
+[Google’s R Style Guide](http://adv-r.had.co.nz/Style.html)
+
+[Style guide](http://adv-r.had.co.nz/Style.html) - Hadley Wickham
+
+[The tidyverse style guide](https://style.tidyverse.org/) - Hadley Wickham
 
 ---
 
@@ -473,18 +534,30 @@ class: inverse, middle, center
 
 # Calculadora
 
-### Ordem operações aritméticas (^ >> * ou / >> + ou -)
+### Ordem das operações aritméticas 
 
+<br>
+
+### .center[`^  >>  * ou /  >>  + ou -`]
+
+<br>
   
 ```{r}
 # sem especificar - segue a ordem
-1 * 2 + 2 ^ 2
+1 * 2 + 2 / 2 ^ 2
 ```
+
 --
+
 ```{r}
 # especificando - segue os parênteses
-(1 * (2 + 2)) ^ 2
+((1 * 2) + (2 / 2)) ^ 2
 ```
+
+---
+
+class: clear, inverse, center, middle
+# Exercícios
 
 ---
 
@@ -505,6 +578,12 @@ background-position: 50% 50%
 # exercicio 01
 9 - 3 / 1/3 + 1
 ```
+
+---
+
+class: clear, inverse, center, middle
+
+# Alguém notou esses colchetes a mais?
 
 ---
 
@@ -567,7 +646,7 @@ obj_10 <- 10
 
 ### Agora a palavra **obj_10** vale **10**
 
-#### Mas....
+#### Mas não aconteceu nada....
 
 ---
 
@@ -594,7 +673,7 @@ obj_10 <- 10
 
 --
 
-### Outro exemplo:
+## Outro exemplo:
 ```{r}
 ## atribuicao - simbolo (<-)
 obj_2 <- 2
@@ -609,7 +688,7 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/rstudio_ambiente.png)
+background-image: url(figs/rstudio_ambiente.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -627,12 +706,13 @@ background-position: 50% 50%
 --
 
 ```{r}
-# sobreescrever o valor dos objetos
+# sobrescreve o valor dos objetos
 obj <- 100
 obj
 ```
 --
 ```{r}
+# obj agora vale 2
 obj <- 2
 obj
 ```
@@ -646,7 +726,7 @@ obj
 
 --
 
-1. Nome de objetos só podem **começar por letras ou pontos (.)**
+1. Nome de objetos só podem **começar por letras (a-z ou A-Z) ou pontos (.)**
 
 --
 
@@ -665,6 +745,12 @@ obj
 5. Nome de objetos não podem ser iguais a **nomes especies**: 
 
 `break, else, FALSE, for, function, if, Inf, NA, NaN, next, repeat, return, TRUE, while`
+
+---
+
+class: inverse, middle, center
+
+# Dúvidas?
 
 ---
 
@@ -717,11 +803,15 @@ sub
 
 ---
 
+
+
 # 2.6 Operadores
 
 ## Operadores aritméticos
 
-<br><br>
+### Resultados numéricos
+
+<br>
 
 | Operador |       Descrição      |   Uso   |
 |:--------:|:--------------------:|:-------:|
@@ -733,14 +823,15 @@ sub
 |    %/%   | Quociente da divisão | a %/% b |
 |     ^    | Potenciação          |   a^b   |
 
-
 ---
 
 # 2.6 Operadores
 
 ## Operadores relacionais
 
-<br><br>
+### Resultados Booleanos (TRUE ou FALSE)
+
+<br>
 
 | Operador |       Descrição       |   Uso   |
 |:--------:|:---------------------:|:-------:|
@@ -753,13 +844,16 @@ sub
 
 ---
 
-# Exercício 02
-
-## Verifique se 3x2³ é maior que 2x3²
+class: clean, inverse, middle, center
+# Exercícios
 
 ---
 
 # Exercício 02
+
+## Verifique se 3x2³ é maior que 2x3²
+
+--
 
 ## Resposta
 ```{r}
@@ -773,9 +867,7 @@ sub
 
 ## Verifique se o resto da divisão de 12567/34 é menor ou igual ao quociente da divisão  3213/123
 
----
-
-# Exercício 03
+--
 
 ## Resposta
 ```{r}
@@ -822,11 +914,11 @@ class: inverse, middle, center
 
 --
 
-1. **Valores** ou **Objetos**: a função irá **alterar os valores** em si ou os atribuídos aos objetos
+1. **Valores** ou **Objetos**: a função irá **alterar os valores** em si ou os valores **atribuídos** aos objetos
 
 --
 
-2. **Parâmetros**: valores fixos que informam um **método** ou a realização de uma **operação**. Informamos o **nome desse argumento**, seguido de **"="** e um *número*, *texto* ou *TRUE* ou *FALSE*.
+2. **Parâmetros**: valores fixos que informam um **método** ou a realização de uma **operação**. Informa-se o **nome desse argumento**, seguido de **"="** e um *número*, *texto* ou *TRUE* ou *FALSE*
 
 --
 
@@ -886,7 +978,7 @@ prod(va1, va2)
 
 # 2.7 Funções
 
-## Nomes dos argumentos
+## Argumentos como **parâmetros**
 
 ```{r}
 # funcoes - nome dos argumentos
@@ -973,6 +1065,12 @@ sq
 ## 2. **Funções** que **operam e mudam** esses dados
 
 ## 3. Nova **atribuição** desses resultados a novos objetos
+
+
+---
+
+class: clean, inverse, middle, center
+# Exercícios
 
 ---
 
@@ -1261,7 +1359,7 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/pacotes.png)
+background-image: url(figs/pacotes.png)
 background-size: 600px
 background-position: 35% 60%
 
@@ -1277,13 +1375,16 @@ https://cran.r-project.org/web/packages/available_packages_by_name.html
 
 ---
 
-# Exercício 05
-
-## Instalem o pacote **tidyverse** do CRAN
+class: clean, inverse, middle, center
+# Exercícios
 
 ---
 
 # Exercício 05
+
+## Instalem o pacote **tidyverse** do CRAN
+
+--
 
 ## Resposta
 
@@ -1293,22 +1394,119 @@ install.packages("tidyverse")
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/rstudio_ambiente.png)
-background-size: 800px
-background-position: 50% 50%
+class: inverse, middle, center
 
-# 2.9 Ambiente (*environment*/*workspace*)
+# Alguém aqui lê o manual de alguma coisa?
 
 ---
 
-# 2.9 Ambiente (*environment*/*workspace*)
+class: inverse, middle, center
+
+# Helena não vale...
+
+---
+
+background-image: url(figs/rstudio_help.png)
+background-size: 600px
+background-position: 50% 98%
+
+# 2.9 Ajuda (*help*)
+## Descreve as informações de uma função
+
+```{r}
+## ajuda
+# descreve as informacoes de uma funcao
+
+help("mean") # arquivo .html
+
+?mean
+```
+
+---
+
+background-image: url(figs/help.png)
+background-size: 600px
+background-position: 50% 50%
+
+# 2.9 Ajuda (*help*)
+
+---
+
+# 2.9 Ajuda (*help*)
+
+## Resumo do *help*
+
+<br><br>
+
+1. **Description**: faz um resumo geral sobre o uso da função
+2. **Usage**: mostra como a função deve ser utilizada e quais argumentos podem ser especificados
+3. **Arguments**: explica o que é cada um dos argumentos
+4. **Details**: explica alguns detalhes sobre o uso e aplicação da função (geralmente poucos)
+5. **Value**: mostra o que sai no output após usar a função (os resultados)
+6. **Note**: notas sobre a função
+7. **Authors**: lista os autores da função (quem escreveu os códigos em R)
+8. **References**: referências para os métodos usados
+9. **See also**: mostra outras funções relacionadas que podem ser consultadas
+10. **Examples**: exemplos do uso da função. Copie e cole os exemplos no R para ver como funciona
+
+---
+
+# 2.9 Ajuda (*help*)
+
+## Detalhes de um pacote
+
+```{r}
+library(help = "vegan")
+```
+
+<br><br><br>
+
+- Descrição
+- Versão
+- Autores
+- Dependências
+- Sites
+- Repositório
+- Índice de funções
+- Diretório
+
+---
+
+class: inverse, middle, center
+
+# Todos se lembram da atribuição e criação de objetos?
+
+---
+
+class: inverse, middle, center
+
+# palavra <- dados
+
+---
+
+background-image: url(figs/rstudio_ambiente.png)
+background-size: 800px
+background-position: 50% 50%
+
+# 2.10 Ambiente (*environment*/*workspace*)
+
+---
+
+class: inverse, middle, center
+
+# Não seria legal se pudéssemos listar ou remover esses objetos?
+
+---
+
+# 2.10 Ambiente (*environment*/*workspace*)
 ### Listar todos os objetos criados
 ```{r}
-# listar objetos criados
+# listar objetos
 ls()
 ```
 --
 ```{r}
+# listar objetos
 objects()
 ```
 
@@ -1318,7 +1516,7 @@ background-image: url(https://media.giphy.com/media/xB1md2I2W16IXil1BO/giphy.gif
 background-size: 600px
 background-position: 50% 70%
 
-# 2.9 Ambiente (*environment*/*workspace*)
+# 2.10 Ambiente (*environment*/*workspace*)
 
 ## CUIDADO 3!
 
@@ -1326,7 +1524,7 @@ background-position: 50% 70%
 
 ---
 
-# 2.9 Ambiente (*environment*/*workspace*)
+# 2.10 Ambiente (*environment*/*workspace*)
 
 <br><br>
 
@@ -1341,43 +1539,49 @@ background-position: 50% 70%
 
 ---
 
-# 2.9 Ambiente (*environment*/*workspace*)
+# 2.10 Ambiente (*environment*/*workspace*)
 
 ### Remover um objeto
 
 ```{r}
+# listar objetos
 ls()
 ```
 --
 ```{r}
+# remover o objeto "bar"
 rm(bar)
 ```
 --
 ```{r}
+# listar objetos
 ls()
 ```
 
 ---
 
-# 2.9 Ambiente (*environment*/*workspace*)
+# 2.10 Ambiente (*environment*/*workspace*)
 
 ### Remover todos os objetos
 
 ```{r}
+# listar objetos
 ls()
 ```
 --
 ```{r}
+# remover todos os objetos
 rm(list = ls())
 ```
 --
 ```{r}
+# listar objetos
 ls()
 ```
 
 ---
 
-# 2.9 Ambiente (*environment*/*workspace*)
+# 2.10 Ambiente (*environment*/*workspace*)
 
 <br><br><br><br>
 
@@ -1410,69 +1614,10 @@ ls()
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/rstudio_help.png)
-background-size: 600px
-background-position: 50% 98%
-
-# 2.10 Ajuda (*help*)
-## Descreve as informações de uma função
-
-```{r}
-## ajuda
-# descreve as informacoes de uma funcao
-
-help("mean") # arquivo .html
-
-?mean
-```
-
----
-
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/help.png)
-background-size: 600px
+class: clear, inverse, middle, center
+background-image: url(https://thumbs.gfycat.com/UnconsciousFakeCirriped-size_restricted.gif)
+background-size: 700px
 background-position: 50% 50%
-
-# 2.10 Ajuda (*help*)
-
----
-
-# 2.10 Ajuda (*help*)
-
-## Resumo do *help*
-
-<br><br>
-
-1. **Description**: faz um resumo geral sobre o uso da função
-2. **Usage**: mostra como a função deve ser utilizada e quais argumentos podem ser especificados
-3. **Arguments**: explica o que é cada um dos argumentos
-4. **Details**: explica alguns detalhes sobre o uso e aplicação da função (geralmente poucos)
-5. **Value**: mostra o que sai no output após usar a função (os resultados)
-6. **Note**: notas sobre a função
-7. **Authors**: lista os autores da função (quem escreveu os códigos em R)
-8. **References**: referências para os métodos usados
-9. **See also**: mostra outras funções relacionadas que podem ser consultadas
-10. **Examples**: exemplos do uso da função. Copie e cole os exemplos no R para ver como funciona
-
----
-
-# 2.10 Ajuda (*help*)
-
-## Detalhes de um pacote
-
-```{r}
-library(help = "vegan")
-```
-
-<br><br><br>
-
-- Descrição
-- Versão
-- Autores
-- Dependências
-- Sites
-- Repositório
-- Índice de funções
-- Diretório
 
 ---
 
@@ -1497,6 +1642,38 @@ citation()
 # citacao dos pacotes
 citation("vegan")
 ```
+
+---
+
+class: clear, inverse, middle, center
+
+# Dúvidas?
+
+---
+
+class: clear, inverse, middle, center
+
+# Erros!!!
+
+---
+
+class: clear, inverse, middle, center
+
+# Se seu script rodou sem erros, tem algo errado...
+
+---
+
+class: clear, inverse, middle, center
+background-image: url(https://media.giphy.com/media/RHmJc6BHbwiK4/giphy.gif)
+background-size: 700px
+background-position: 50% 50%
+
+---
+
+class: clear, inverse, middle, center
+background-image: url(https://i.imgur.com/7hinFAF.gif)
+background-size: 700px
+background-position: 50% 50%
 
 ---
 
@@ -1549,14 +1726,14 @@ ggplot(iris) + aes(Sepal.Length, Sepal.Width) + geom_point()
 # 2.12 Principais erros
 
 ## 4. Esquecer de carregar um pacote
-```{r}
+```{r,fig.align='center',fig.width=5.5,fig.height=5.5}
 library(ggplot2)
 ggplot(iris) + aes(Sepal.Length, Sepal.Width) + geom_point() + theme_bw()
 ```
 
 ---
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/CamelCase_new.svg/1200px-CamelCase_new.svg.png)
+background-image: url(figs/camel_case.png)
 background-size: 350px
 background-position: 50% 90%
 
@@ -1569,7 +1746,7 @@ rowSums(iris[1:10, -5])
 
 ---
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/CamelCase_new.svg/1200px-CamelCase_new.svg.png)
+background-image: url(figs/camel_case.png)
 background-size: 350px
 background-position: 50% 90%
 
@@ -1579,6 +1756,14 @@ background-position: 50% 90%
 ```{r, error = TRUE}
 rowsums(iris[1:10, -5])
 ```
+
+---
+
+background-image: url(figs/camel_case.png), url(figs/snake_case2.png)
+background-size: 350px, 400px
+background-position: 8% 60%, 90% 60%
+
+# Camel Case vs Snake Case
 
 ---
 

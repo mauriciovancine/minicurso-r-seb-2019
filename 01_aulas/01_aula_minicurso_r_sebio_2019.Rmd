@@ -18,7 +18,6 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-library(tidyverse)
 ```
 
 class: clear, center, middle
@@ -41,7 +40,7 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/falar_r.png)
+background-image: url(figs/falar_r.png)
 background-size: 600px
 background-position: 50% 70%
 
@@ -63,7 +62,7 @@ O R é uma **linguagem de programação** voltada para a resolução de **proble
 
 --
 
-O R é uma **linguagem de programação livre** (*open source*), direcionada ao **manejo, análise e visualização de dados**, com diversas **expansões** (*pacotes*) para o uso de **dados com formatos específicos** (**Maurício Vancine**)
+O R é uma **linguagem de programação**, distribuído como um software livre e grátis (*free software*), direcionada ao **manejo, análise e visualização de dados**, com diversas **expansões** (*pacotes*) para o uso de **dados com formatos específicos** (**Maurício Vancine**)
 
 <br>
 
@@ -83,13 +82,13 @@ O [Manual do R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)<su
 
 --
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/programacao.png)
+background-image: url(figs/programacao.png)
 background-size: 800px
 background-position: 50% 75%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/r_funcionamento.png)
+background-image: url(figs/r_funcionamento.png)
 background-size: 700px
 background-position: 50% 50%
 
@@ -121,10 +120,10 @@ background-position: 50% 50%
 
 ---
 
-class: inverse, middle, center
-background-image: url(https://scontent.fcpq2-1.fna.fbcdn.net/v/t1.0-9/70577913_2412516828817366_1228526578422513664_n.jpg?_nc_cat=103&_nc_oc=AQl-phKG87GrKImw200CLkd-bbNalW0VOvjoQSycoU0653Tdp-dsFatbwP8amgYFjjTGfjyu1qxzf6oc3iSZdEgT&_nc_ht=scontent.fcpq2-1.fna&oh=60a637a568c7ae96ffc9dc8d2bd973d9&oe=5DEF955E)
-background-size: 500px
-background-position: 50% 30%
+class: clear, inverse, middle, center
+background-image: url(figs/ecologia_estatistica.jpg)
+background-size: 600px
+background-position: 50% 50%
 
 ---
 
@@ -181,7 +180,7 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/r_rstudio.png)
+background-image: url(figs/r_rstudio.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -197,13 +196,14 @@ class: inverse, middle, center
 
 # 1.3 Aplicações da linguagem R
 
-## Análises
+## Análises e Visualização
 - Estatísticas univariadas e multivariadas
 - Análises de dados ecológicos (população, comunidades e ecossistemas)
 - Análise de dados espaciais, temporais e sonoros
 - Análise de dados funcionais, genéticos e filogenéticos
-- Análise de dados geoespaciais
-- Visualização de todos os dados anteriores...
+- Análise de dados geoespaciais, sensoriamento retomo
+- Visualização de todos os dados anteriores
+- Data Science
 
 --
 
@@ -305,7 +305,7 @@ background-position: 50% 70%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/site_r1.jpg)
+background-image: url(figs/site_r1.jpg)
 background-size: 700px
 background-position: 50% 60%
 
@@ -501,7 +501,7 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(https://www.insidehighered.com/sites/default/server_files/styles/large/public/media/11041082_1615577822032844_2683638636883239144_n.jpg?itok=Tr2FYFs_)
+background-image: url(figs/libgen_corvo.jpg)
 background-size: 370px
 background-position: 50% 20%
 
@@ -514,7 +514,7 @@ Obrigado Alexandra Elbakyan!
 
 ---
 
-background-image: url(https://i.imgur.com/BlpHJBK.png)
+background-image: url(figs/libgen1.png)
 background-size: 800px
 background-position: 50% 55%
 
@@ -526,7 +526,7 @@ background-position: 50% 55%
 
 ---
 
-background-image: url(https://i.imgur.com/Nureb5E.png)
+background-image: url(figs/libgen2.png)
 background-size: 800px
 background-position: 50% 55%
 

@@ -2,7 +2,7 @@
 # aula 3 - estrutura e manejo de dados
 
 # mauricio vancine
-# 30-09-2019
+# 22-10-2019
 # -------------------------------------------------------------------------
 
 # topicos -----------------------------------------------------------------  
@@ -70,20 +70,37 @@ se.e
 
 # repeticao
 # rep(x, times) # repete x tantas vezes
-# rep(x, each) # retete x tantas vezes de cada
 rep_times <- rep(x = c(1, 2), times = 5)
 rep_times
 
+# rep(x, each) # retete x tantas vezes de cada
 rep_each <- rep(x = c("a", "b"), each = 5)
 rep_each
 
-# palavra e sequencia numerica - sem separacao
+# palavra e sequencia numerica - sem separacao definida (" ")
 am1 <- paste("amostra", 1:6, sep = "0")
 am1
 
-# palavra e sequencia numerica - separacao por "_"
+# palavra e sequencia numerica - separacao por "_0"
 am2 <- paste("amostra", 1:6, sep = "_0")
 am2
+
+# amostragem aleatória - sem reposição
+sa_sem_rep <- sample(1:100, 10)
+sa_sem_rep
+
+# amostragem aleatória - com reposição
+sa_com_rep <- sample(1:10, 100, replace = TRUE)
+sa_com_rep
+
+# exercicio 06 ------------------------------------------------------------
+
+
+# exercicio 07 ------------------------------------------------------------
+
+
+# exercicio 08 ------------------------------------------------------------
+
 
 # coercao: vetor com elementos de modos diferentes
 ve <- c(1, "a", 3)

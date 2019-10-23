@@ -18,7 +18,6 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-library(tidyverse)
 ```
 
 class: clear, center, middle
@@ -38,7 +37,7 @@ background-position: 50% 50%
 - Ecologia Espacial
 - Ecologia Quantitativa
 - Ecologia e Conservação de Anfíbios
-
+  
 --
 
 ### Habilidades
@@ -266,9 +265,9 @@ background-position: 90% 85%
 <br>
 2.8 Pacotes
 <br>
-2.9 Ambiente (*environment*/*workspace*)
+2.9 Ajuda (*help*)
 <br>
-2.10 Ajuda (*help*)
+2.10 Ambiente (*environment*/*workspace*)
 <br>
 2.11 Citações
 <br>
@@ -421,7 +420,7 @@ background-position: 50% 60%
 ---
 
 class: clear, inverse, middle, center
-background-image: url(https://scontent.fcpq2-1.fna.fbcdn.net/v/t1.0-9/70577913_2412516828817366_1228526578422513664_n.jpg?_nc_cat=103&_nc_oc=AQl-phKG87GrKImw200CLkd-bbNalW0VOvjoQSycoU0653Tdp-dsFatbwP8amgYFjjTGfjyu1qxzf6oc3iSZdEgT&_nc_ht=scontent.fcpq2-1.fna&oh=60a637a568c7ae96ffc9dc8d2bd973d9&oe=5DEF955E)
+background-image: url(figs/ecologia_estatistica.jpg)
 background-size: 600px
 background-position: 50% 50%
 
