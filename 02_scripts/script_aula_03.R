@@ -109,58 +109,12 @@ ve
 ve <- c(1, "a", TRUE)
 ve
 
-#  character >> numeric
-ve <- c("a", 1)
-ve
-
-class(ve)
-mode(ve)
-
-# numeric >> logical
-ve <- c(1, TRUE)
-ve
-
-class(ve)
-mode(ve)
-
-# character >> logical
-ve <- c("a", TRUE)
-ve
-
-class(ve)
-mode(ve)
-
-# character >> numeric >> logical
-ve <- c("a", 1, TRUE)
-ve
-
-class(ve)
-mode(ve)
-
-# Conversao: forcar um vetor a ter um modo especifico
-# vector numeric
-ve <- c(0, 1, 2, 3, 4)
-ve
-
-mode(ve)
-
-# numeric para character
-ve_ch <- as.character(ve)
-ve_ch
-
-mode(ve_ch)
-
-# numeric para logical
-ve_lo <- as.logical(ve)
-ve_lo
-
-mode(ve_lo)
-
-# character para numeric
-ve_nu <- as.numeric(ve_ch)
-ve_nu
-
-mode(ve_nu)
+# conversao: mudar o modo dos elementos de um vetor
+# funcoes
+as.character()
+as.integer()
+as.numeric()
+as.logical()
 
 # 2. factor: homogeneo (um modo - sempre numeric), unidimensional (uma dimensao) e possui ainda levels (niveis)
 # 2. factor nominal: variaveis nominais
@@ -192,6 +146,10 @@ fa_no
 levels(fa_no)
 class(fa_no)
 
+
+# exercicio 09 ------------------------------------------------------------
+
+
 # 3. matrix: homogeneo (um modo) e bidimensional (duas dimensao)
 # 1 dispondo elementos
 # matriz - funcao matrix
@@ -222,14 +180,9 @@ ma_rbind
 ma_cbind <- cbind(vec_1, vec_2)
 ma_cbind
 
-# coercao
-# criar dois vetores
-vec_ch <- c("sp1", "sp2", "sp3")
-vec_nu <- c(4, 5, 6)
+# exercicio 10 ------------------------------------------------------------
 
-# combinar por colunas - horizontal - um ao lado do outro
-ma_ch <- cbind(vec_ch, vec_nu)
-ma_ch
+
 
 # 4. array: homogeneo (um modo) e multidimensional (mais que duas dimensoes)
 # 1 Dispondo elementos
@@ -261,24 +214,7 @@ df <- data.frame(especies = vec_ch,
                  vegetacao = vec_fa)
 df
 
-# coercao de data frame para matrix
-ma <- as.matrix(df)
-ma
-
-# coercao de matrix para data frame
-df <- as.data.frame(ma)
-df
-
-str(df)
-
-# coercao de matrix para data frame
-df <- as.data.frame(ma, stringsAsFactors = FALSE)
-df
-
-str(df)
-
 # data frame vs cbind
-  
 # vetores
 pa <- paste("parcela", 1:4, sep = "_")
 pa
@@ -289,17 +225,19 @@ pe
 tr <- factor(rep(c("trat", "cont"), each = 2))
 tr
 
-# uniao de vetores
+# combinação de vetores
 df <- data.frame(pa, pe, tr)
 df
 
 str(df)
 
-# uniao de vetores
+# combinação de vetores
 df_c <- cbind(pa, pe, tr)
 df_c
 
 str(df_c)
+
+# exercicio 11 ------------------------------------------------------------
 
 # 6. list: heterogeneo (mais de um modo) e unidimensional (uma dimensao)
 li <- list(rep(1, 20), # vector
@@ -311,8 +249,12 @@ li
 # 3.4 Manejo de dados unidimensionais -------------------------------------
 # vetor e fator
 # 1 indexacao []
-ve <- seq(10, 100, 10)
-ve
+# fixar a amostragem
+set.seed(42)
+
+# vetor
+se <- seq(0, 5, .01)
+se
 
 # seleciona o quinto elemento
 ve[5]
@@ -381,21 +323,12 @@ sort(ve)
 
 # ordenar decrescente
 sort(ve, dec = TRUE)
-  
-# mostrar a ordem da ordenacao crescente
-order(ve)
-
-# mostrar a ordem da ordenacao decrescente
-order(ve, decreasing = TRUE)
-
-# mostrar a ordem da ordenacao "sort"
-order(sort(ve))
 
 # arredondamento
-round(ve, digits = 2)
+round(ve, digits = 1)
 
 # arredondamento
-round(ve, 3)
+round(ve, digits = 0)
 
 # algum?
 any(ve > 1)
@@ -412,30 +345,10 @@ subset(ve, ve > 1)
 # condicao para uma operacao
 ifelse(ve > 1, 1, 0)
 
-# lista - indexacao []
-li <- list(elem1 = 1, elem2 = 2, elem3 = 3)
-li
+# exercicio 12 ------------------------------------------------------------
 
-# acessar o primeiro elemento
-li[1]
 
-# acessar o primeiro e o terceiro elementos e atribuir
-li2 <- li[c(1, 3)]
-li2
-
-# retirar o primeiro elemento
-li[-1]
-
-# retirar o segundo elemento e atribuir
-li_13 <- li[-2]
-li_13
-
-# comprimento
-length(li)
-
-# names
-names(li)
-
+# 3.5 manejo de dados bidimensionais --------------------------------------
 # matriz - indexacao []
 ma <- matrix(1:12, 4, 3)
 ma 
@@ -495,102 +408,6 @@ df[df$abu2 == 0, ]
 # selecionar linhas de uma matriz ou data frame 
 df[df$flo == "floresta", ]
 
-
-# 3.5 manejo de dados bidimensionais --------------------------------------
-# matrizes e data frames
-  
-# head(): mostra as primeiras 10 linhas
-head(df)
-
-# head(): mostra as primeiras 10 linhas
-head(df, 10)
-
-# tail(): mostra as ultimas 6 linhas
-tail(df)
-
-# nrow(): mostra o numero de linhas
-nrow(df)
-
-# ncol(): mostra o numero de colunas
-ncol(df)
-
-# dim(): mostra o numero de linhas e de colunas
-dim(df)
-
-# rownames(): mostra os nomes dfs linhas (locais)
-rownames(df)
-
-# colnames(): mostra os nomes dfs colunas (variaveis)
-colnames(df)
-
-# mudfr o nome dfs linhas
-df 
-rownames(df)
-rownames(df) <- c(paste("local", 1:9, sep = "_0"), "local_10")
-rownames(df)
-df
-
-# str(): mostra as classes de cadf coluna (estrutura)
-str(df)
-
-# summary(): mostra um resumo dos valores de cadf coluna
-summary(df)
-
-# criar uma matriz
-ma <- matrix(c(12, 5, 8, 0, 15, 0, 0, 2, 7), 3)
-ma
-
-# rowSums(): soma das linhas
-rowSums(ma)
-  
-# colSums(): soma das colunas
-colSums(ma)
-
-# rowMeans(): media das linhas
-rowMeans(ma)
-
-# colMeans(): media das linhas
-colMeans(ma)
-
-#  amostragem de linhas
-n_row <- 1:10
-n_row
-
-row_sa <- sample(n_row, 4)
-n_row_sa
-
-df_sa <- df[n_row_sa, ]
-df_sa
-
-# fixar amostragem
-set.seed(5)
-
-# amostragem de linhas
-n_row <- 1:10
-n_row
-
-n_row_sa <- sample(n_row, 4)
-n_row_sa
-
-df_sa <- df[n_row_sa, ]
-df_sa
-
-# ordencao de linhas
-df_so <- df[order(df$abu, decreasing = TRUE), ]
-df_so
-
-# ordencao de linhas
-df_so <- df[order(df$abu, decreasing = FALSE), ]
-df_so
-
-# filtro
-df_su <- subset(df, flo == "floresta")
-df_su
-
-# filtro
-df_su <- subset(df, abu2 == 1)
-df_su
-
 #  3.6 valores faltantes e especiais --------------------------------------
 # 1 na - not available
 foo_na <- NA
@@ -644,7 +461,7 @@ nulo
 
 # 3.7 diretorio de trabalho -----------------------------------------------
 # definir o diretorio de trabalho
-setwd("/home/mude/data/github/disciplina-geoprocessamento/03_dados/00_tabelas")
+setwd("/home/mude/data/github/minicurso-r-sebio-2019/03_dados")
   
 # verificar o diretorio
 getwd()
@@ -688,10 +505,6 @@ da
 # colnames(): mostra os nomes das colunas (variaveis)
 # str(): mostra as classes de cada coluna (estrutura)
 # summary(): mostra um resumo dos valores de cada coluna
-
-# ler e atribuir uma planilha eletronica (.csv) a um objeto
-da <- read.csv("/home/mude/data/github/disciplina-geoprocessamento/03_dados/00_tabelas/ATLANTIC_AMPHIBIANS_sites.csv")
-da
 
 # head(): mostra as primeiras 10 linhas
 head(da)
@@ -737,21 +550,21 @@ nrow(da)
 nrow(da_na)
 
 # subset das linhas com amostragens de anfibios em pernambuco
-da_per <- da[da$state == "Pernambuco", ]
-da_per
+da_sp <- da[da$state == "São Paulo", ]
+da_sp
 
 # 3.10 Exportar dados -----------------------------------------------------
 # planilha eletronica (.csv)
-write.csv(da_per, "ATLANTIC_AMPHIBIAN_sites_pernambuco.csv", 
+write.csv(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.csv", 
           row.names = FALSE, quote = FALSE)
 
 
 # planilha de texto (.txt)
-write.table(da_per, "ATLANTIC_AMPHIBIAN_sites_pernambuco.txt", 
+write.table(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.txt", 
             row.names = FALSE, quote = FALSE)
 
 # planilha eletronica (.xlsx)
-openxlsx::write.xlsx(da_per, "ATLANTIC_AMPHIBIAN_sites_pernambuco.xlsx", 
+openxlsx::write.xlsx(da_sp, "ATLANTIC_AMPHIBIAN_sites_sao_paulo.xlsx", 
                      row.names = FALSE, quote = FALSE)
 
 # end ---------------------------------------------------------------------

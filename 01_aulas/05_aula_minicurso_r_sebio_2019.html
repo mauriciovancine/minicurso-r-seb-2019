@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/r_data.png)
+background-image: url(figs//r_data.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -46,8 +46,16 @@ background-position: 50% 50%
 5.7 Gráfico de caixa (*box plot* e *violin plot*)
 &lt;br&gt;
 5.8 Gráfico de dispersão (*scatter plot*)
-&lt;br&gt;
-5.9 Gráfico pareado (*pairs plot*)
+
+---
+
+# 5 Visualização de dados
+
+## Script
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+## .center[`script_aula_05.R`]
 
 ---
 
@@ -100,10 +108,10 @@ class: inverse, middle, center
 library(tidyverse)
 
 # directory
-setwd("/home/mude/data/github/disciplina-geoprocessamento/03_dados/00_tabelas")
+setwd("/home/mude/data/github/minicurso-r-sebio-2019/03_dados")
 
 # importar
-da &lt;- read_csv("ATLANTIC_AMPHIBIANS_sites.csv")
+da &lt;- readr::read_csv("ATLANTIC_AMPHIBIANS_sites.csv")
 da
 
 # verificar
@@ -133,7 +141,7 @@ glimpse(da)
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs/sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -435,7 +443,7 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/graficos.png)
+background-image: url(figs//graficos.png)
 background-size: 700px
 background-position: 50% 50%
 
@@ -443,7 +451,7 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/variables.png)
+background-image: url(figs//variables.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -457,7 +465,7 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/graficos_variaveis.png)
+background-image: url(figs//graficos_variaveis.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -502,7 +510,7 @@ background-position: 50% 70%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1045,7 +1053,7 @@ background-position: 50% 70%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1294,7 +1302,7 @@ background-position: 50% 80%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1478,7 +1486,7 @@ background-position: 50% 35%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1720,7 +1728,7 @@ background-position: 50% 80%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1841,7 +1849,7 @@ Slides criados via pacote [xaringan](https://github.com/yihui/xaringan) e tema [
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "tomorrow-night-eighties",
+"highlightStyle": "rainbow",
 "highlightLines": true,
 "countIncrementalSlides": false
 });

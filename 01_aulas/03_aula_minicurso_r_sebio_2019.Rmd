@@ -632,6 +632,14 @@ tr <- as.factor(ch)
 tr
 ```
 
+--
+
+```{r, eval = FALSE}
+# solucao 2
+tr <- as.factor(rep(c("cont", "trat"), each = 50))
+tr
+```
+
 ---
 
 background-image: url(http://venus.ifca.unican.es/Rintro/_images/dataStructuresNew.png)
@@ -1338,6 +1346,11 @@ ve
 # arredondamento
 round(ve, digits = 1)
 ```
+--
+```{r}
+# arredondamento
+round(ve, digits = 0)
+```
 
 ---
 
@@ -1389,7 +1402,62 @@ class: clean, inverse, middle, center
 
 ## Manejo de dados unidimensionais 
 ### Alguns problemas:
+1. Crie um vetor resultante da amostragem aleatória de 100 números entre 0 a 1 com intervalo de 0.01
+2. Ordene esse vetor de forma decrescente e atribua a um novo objeto
+3. Quanto e quais valores desse novo objeto são menores que 0.5?
+4. Transforme o vetor do .2 em binário (0 e 1), sendo que acima do valor da média desse vetor seja 1 e abaixo seja 0 atribuindo a um novo objeto
 
+---
+
+# Exercício 12
+
+## Manejo de dados unidimensionais 
+### Solução
+```{r}
+# solucao
+# 1. 
+ve <- sample(seq(0, 1, 1e-2), 1e2)
+ve
+```
+
+---
+
+# Exercício 12
+
+## Manejo de dados unidimensionais 
+### Solução
+```{r}
+# solucao
+# 2. 
+ve_de <- sort(ve, decreasing = TRUE)
+ve_de
+```
+
+---
+
+# Exercício 12
+
+## Manejo de dados unidimensionais 
+### Solução
+```{r}
+# solucao
+# 3. 
+length(ve_de[ve_de < 0.5])
+which(ve_de < 0.5)
+```
+
+---
+
+# Exercício 12
+
+## Manejo de dados unidimensionais 
+### Solução
+```{r}
+# solucao
+# 4. 
+ve_de_bi <- ifelse(ve_de > mean(ve_de), 1, 0)
+ve_de_bi
+```
 
 ---
 
@@ -1891,7 +1959,7 @@ background-position: 50% 85%
 
 # 3.8 Importar dados
 
-## Os arquivos de tabelas podem estar em **três** principais formatos:
+## Os arquivos de tabelas geralmente estão num desses **três** formatos:
 
 <br><br>
 

@@ -18,11 +18,10 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-library(tidyverse)
 ```
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/r_data.png)
+background-image: url(figs//r_data.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -46,8 +45,16 @@ background-position: 50% 50%
 5.7 Gráfico de caixa (*box plot* e *violin plot*)
 <br>
 5.8 Gráfico de dispersão (*scatter plot*)
-<br>
-5.9 Gráfico pareado (*pairs plot*)
+
+---
+
+# 5 Visualização de dados
+
+## Script
+
+<br><br><br><br><br><br>
+
+## .center[`script_aula_05.R`]
 
 ---
 
@@ -99,10 +106,10 @@ class: inverse, middle, center
 library(tidyverse)
 
 # directory
-setwd("/home/mude/data/github/disciplina-geoprocessamento/03_dados/00_tabelas")
+setwd("/home/mude/data/github/minicurso-r-sebio-2019/03_dados")
 
 # importar
-da <- read_csv("ATLANTIC_AMPHIBIANS_sites.csv")
+da <- readr::read_csv("ATLANTIC_AMPHIBIANS_sites.csv")
 da
 
 # verificar
@@ -111,7 +118,7 @@ glimpse(da)
 
 ```{r, include = FALSE}
 library(tidyverse)
-da <- read_csv("/home/mude/data/github/disciplina-geoprocessamento/03_dados/00_tabelas/ATLANTIC_AMPHIBIANS_sites.csv")
+da <- read_csv("/home/mude/data/github/minicurso-r-sebio-2019/03_dados/ATLANTIC_AMPHIBIANS_sites.csv")
 ```
 
 ---
@@ -135,7 +142,7 @@ da <- read_csv("/home/mude/data/github/disciplina-geoprocessamento/03_dados/00_t
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs/sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -428,7 +435,7 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/graficos.png)
+background-image: url(figs//graficos.png)
 background-size: 700px
 background-position: 50% 50%
 
@@ -436,7 +443,7 @@ background-position: 50% 50%
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/variables.png)
+background-image: url(figs//variables.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -450,7 +457,7 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/graficos_variaveis.png)
+background-image: url(figs//graficos_variaveis.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -495,7 +502,7 @@ background-position: 50% 70%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1111,7 +1118,7 @@ background-position: 50% 70%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1392,7 +1399,7 @@ background-position: 50% 80%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1595,7 +1602,7 @@ background-position: 50% 35%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1913,7 +1920,7 @@ background-position: 50% 80%
 ---
 
 class: clear, center, middle
-background-image: url(https://raw.githubusercontent.com/mauriciovancine/curso-r/master/imagens/sticker_graphics_package.png)
+background-image: url(figs//sticker_graphics_package.png)
 background-size: 400px
 background-position: 50% 50%
 
