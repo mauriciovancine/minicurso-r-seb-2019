@@ -21,7 +21,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ```
 
 class: clear, center, middle
-background-image: url(figs//r_data.png)
+background-image: url(figs/saurus_plot.png)
 background-size: 800px
 background-position: 50% 50%
 
@@ -30,21 +30,23 @@ background-position: 50% 50%
 # 5 Visualização de dados
 
 ## Tópicos
-5.1 Tipos de dados (*variáveis = colunas*)
+5.1 Principais pacotes para gráficos no R
 <br>
-5.2 Principais tipos de gráficos
+5.2 Principais livros e sites
 <br>
-5.3 Gráficos no R (pacotes *graphics*, *ggplot2* e *ggpubr*)
+5.3 Colunas como eixos do gráficos (*variáveis = colunas*)
 <br>
-5.4 Histograma (*histogram*)
+5.4 Principais tipos de gráficos
 <br>
-5.5 Gráfico de setores (*pie chart* e *danut plot*)
+5.5 Histograma (*histogram*)
 <br>
-5.6 Gráfico de barras (*bar plot*)
+5.6 Gráfico de setores (*pie chart* e *donut plot*)
 <br>
-5.7 Gráfico de caixa (*box plot* e *violin plot*)
+5.7 Gráfico de barras (*bar plot*)
 <br>
-5.8 Gráfico de dispersão (*scatter plot*)
+5.8 Gráfico de caixa (*box plot* e *violin plot*)
+<br>
+5.9 Gráfico de dispersão (*scatter plot*)
 
 ---
 
@@ -125,7 +127,7 @@ da <- read_csv("/home/mude/data/github/minicurso-r-sebio-2019/03_dados/ATLANTIC_
 
 # 5.1 Principais pacotes para gráficos no R
 
-## Atualmente, há três principais pacotes para gerar gráficos no R:
+## Atualmente, há **três principais pacotes** para gerar **gráficos gerais** no R:
 
 --
 
@@ -199,7 +201,7 @@ background-position: 50% 50%
 
 --
 
-### Necessita de função específicas para objetos de **diversas classes**
+### Necessita de funções específicas para objetos de **classes diferentes**
 
 --
 
@@ -207,17 +209,17 @@ background-position: 50% 50%
 
 `ggplot() +`<br>
 `aes() +`<br>
-`geom() +`<br>
-`facet() +`<br>
-`stats() +`<br>
-`coord() +`<br>
-`theme()`<br>
+`geom_() +`<br>
+`facet_() +`<br>
+`stats_() +`<br>
+`coord_() +`<br>
+`theme_()`<br>
 
 ---
 
-background-image: url(https://cxlabsblog.files.wordpress.com/2017/10/2017-10-24-14_36_29-visualization-layers-of-ggplot-google-docs.png)
-background-size: 600px
-background-position: 50% 50%
+background-image: url(figs/ggplot2.png)
+background-size: 500px
+background-position: 50% 70%
 
 # 5.1 Principais pacotes para gráficos no R
 
@@ -229,7 +231,7 @@ background-position: 50% 50%
 
 ## **ggplot2**
 
-```{r, warning=FALSE, message=FALSE, fig.align='center', out.width = '50%'}
+```{r, warning=FALSE, message=FALSE, fig.align='center', out.width = '45%'}
 # ggplot2
 library(ggplot2)
 ggplot(data = da) + aes(effort_months, species_number) + geom_point()
@@ -239,7 +241,7 @@ ggplot(data = da) + aes(effort_months, species_number) + geom_point()
 
 class: clear, center, middle
 background-image: url(http://www.sthda.com/english/sthda-upload/images/symplyr/ggpubr-300.png)
-background-size: 400px
+background-size: 300px
 background-position: 50% 50%
 
 ---
@@ -248,11 +250,11 @@ background-position: 50% 50%
 
 ## **ggpubr**
 
-### Fornece algumas funções fáceis de usar para criar e personalizar plots para publicação baseadas no 'ggplot2'.
+### Fornece algumas funções fáceis de usar para criar e personalizar plots para publicação baseadas no 'ggplot2'
 
 --
 
-### Necessita de função específicas para **gráficos espacíficos**
+### Necessita de funções específicas para gerar **gráficos espacíficos**
 
 --
 
@@ -264,7 +266,6 @@ background-position: 50% 50%
 `ggviolin()`<br>
 `ggbarplot()`<br>
 `ggscatter()`<br>
-`ggpaired()`<br>
 
 ---
 
@@ -281,31 +282,31 @@ ggscatter(da, x = "effort_months", y = "species_number")
 
 background-image: url(http://hadley.nz/hadley-wickham.jpg)
 background-size: 500px
-background-position: 50% 70%
+background-position: 50% 65%
 
-# 5.1 Principais pacotes para gráficos no R
+# 5.2 Principais livros e sites
 
 ## Livros
 
-## O idealizador e mantenedor do pacote **ggplot2** foi de novo o **Hadley Wickham**
+### O idealizador e mantenedor do pacote **ggplot2** foi de novo o **Hadley Wickham**
 
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 
 [*] http://hadley.nz/
 
 ---
 
-background-image: url(https://images-na.ssl-images-amazon.com/images/I/31uoy-qmhEL._SX331_BO1,204,203,200_.jpg)
+background-image: url(https://images-na.ssl-images-amazon.com/images/I/51wa9v9rVyL.jpg)
 background-size: 230px
 background-position: 50% 63%
 
-# 5.1 Principais pacotes para gráficos no R
+# 5.2 Principais livros e sites
 
 ## Livros
 
 ### **ggplot2 (2009, 2016, work-in-progress)**
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 [*] http://had.co.nz/ggplot2/
 
@@ -315,7 +316,7 @@ background-image: url(https://covers.oreillystatic.com/images/0636920063704/lrg.
 background-size: 250px
 background-position: 50% 63%
 
-# 5.1 Principais pacotes para gráficos no R
+# 5.2 Principais livros e sites
 
 ## Livros
 
@@ -329,31 +330,47 @@ background-position: 50% 63%
 
 background-image: url(https://d33wubrfki0l68.cloudfront.net/b88ef926a004b0fce72b2526b0b5c4413666a4cb/24a30/cover.png)
 background-size: 250px
-background-position: 50% 65%
+background-position: 50% 70%
 
-# 5.1 Principais pacotes para gráficos no R
+# 5.2 Principais livros e sites
 
 ## Livros
 
 ### **R for Data Science (2017)**
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 [*] https://r4ds.had.co.nz/
 
 ---
 
-background-image: url(https://serialmentor.com/dataviz/cover.png)
-background-size: 300px
-background-position: 50% 60%
+background-image: url(https://rkabacoff.github.io/datavis/img/cover.png)
+background-size: 230px
+background-position: 50% 65%
 
-# 5.1 Principais pacotes para gráficos no R
+# 5.2 Principais livros e sites
+
+## Livros
+
+### **Data Visualization with R (2018)**
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+[*] https://rkabacoff.github.io/datavis/
+
+---
+
+background-image: url(https://serialmentor.com/dataviz/cover.png)
+background-size: 260px
+background-position: 50% 63%
+
+# 5.2 Principais livros e sites
 
 ## Livros
 
 ### **Fundamentals of Data Visualization (2019)**
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 [*] https://serialmentor.com/dataviz/
 
@@ -363,13 +380,13 @@ background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/ggplot2
 background-size: 300px
 background-position: 50% 60%
 
-# 5.1 Principais pacotes para gráficos no R
+# 5.2 Principais livros e sites
 
 ## Sites
 
 ### **ggplot2: Reference**
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 [*] https://ggplot2.tidyverse.org/reference/
 
@@ -379,13 +396,13 @@ background-image: url(https://www.gastonsanchez.com/visually-enforced/images/blo
 background-size: 600px
 background-position: 50% 60%
 
-# 5.1 Principais pacotes para gráficos no R
+# 5.2 Principais livros e sites
 
 ## Sites
 
 ### **R Graph Gallery**
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 [*] https://www.r-graph-gallery.com/
 
@@ -395,13 +412,13 @@ background-image: url(https://www.data-to-viz.com/img/logo/tree-s.png)
 background-size: 400px
 background-position: 50% 60%
 
-# 5.1 Principais pacotes para gráficos no R
+# 5.2 Principais livros e sites
 
 ## Sites
 
 ### **from Data to Viz**
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 [*] https://www.data-to-viz.com/
 
@@ -411,13 +428,13 @@ background-image: url(https://pbs.twimg.com/profile_images/894457761681084416/Oo
 background-size: 300px
 background-position: 50% 60%
 
-# 5.1 Principais pacotes para gráficos no R
+# 5.2 Principais livros e sites
 
 ## Sites
 
 ### **Statistical tools for high-throughput data analysis (STHDA)**
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 [*] http://www.sthda.com/english/
 
@@ -431,23 +448,27 @@ class: inverse, middle, center
 
 class: inverse, middle, center
 
-# Os elementos de um gráfico são representações das colunas (eixos) e linhas (elementos) das nossas matrizes de dados
+# Os elementos de um gráfico são representações das colunas (eixos) e linhas (elementos) de nossas matrizes de dados
 
 ---
 
-background-image: url(figs//graficos.png)
+background-image: url(https://www.researchgate.net/publication/319342001/figure/fig1/AS:532844527222784@1504051443243/Data-table-scatterplot.png)
 background-size: 700px
 background-position: 50% 50%
 
-# 5.2 Colunas como eixos do gráficos
+# 5.3 Colunas como eixos do gráficos
+
+## Colunas se tornam eixos e valores a representação
 
 ---
 
-background-image: url(figs//variables.png)
-background-size: 800px
+background-image: url(figs/variables.png)
+background-size: 700px
 background-position: 50% 50%
 
-# 5.2 Colunas como eixos (tipos de variáveis)
+# 5.3 Colunas como eixos do gráficos
+
+## Tipos de variáveis
 
 ---
 
@@ -457,19 +478,11 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(figs//graficos_variaveis.png)
-background-size: 800px
-background-position: 50% 50%
-
-# 5.3 Principais tipos de gráficos
-
----
-
 background-image: url(https://d1fq16qvu9tpz9.cloudfront.net/uploads/ckeditor/pictures/26/content_select_chart_type.jpg)
 background-size: 800px
 background-position: 50% 50%
 
-# 5.3 Principais tipos de gráficos
+# 5.4 Principais tipos de gráficos
 
 ---
 
@@ -477,15 +490,21 @@ background-image: url(https://www.data-to-viz.com/img/logo/tree-s.png)
 background-size: 400px
 background-position: 50% 60%
 
-# 5.3 Principais tipos de gráficos
+# 5.4 Principais tipos de gráficos
 
 ## Sites
 
 ### **from Data to Viz**
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 [*] https://www.data-to-viz.com/
+
+---
+
+class: inverse, middle, center
+
+# Dúvidas?
 
 ---
 
@@ -493,7 +512,7 @@ background-image: url(https://www.data-to-viz.com/img/section/Histogram150.png)
 background-size: 250px
 background-position: 50% 70%
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## **Representa os dados de**: uma coluna
 ## **Tipo de dado**: discreto ou contínuo
@@ -508,7 +527,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 .pull-left[
@@ -524,7 +543,7 @@ hist(da$species_number) #<<
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 .pull-left[
@@ -542,7 +561,7 @@ hist(da$species_number,
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 .pull-left[
@@ -561,7 +580,7 @@ hist(da$species_number,
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 .pull-left[
@@ -582,7 +601,7 @@ hist(da$species_number,
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 .pull-left[
@@ -604,7 +623,7 @@ hist(da$species_number,
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 .pull-left[
@@ -629,7 +648,7 @@ hist(da$species_number,
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 ```{r, eval = FALSE}
@@ -650,7 +669,7 @@ lines(density(da$species_number)) #<<
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -671,7 +690,7 @@ lines(density(da$species_number))
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 
@@ -683,7 +702,7 @@ setwd("")
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 
@@ -695,7 +714,7 @@ tiff("meu_primeiro_histograma.tif", wi = 15, he = 15, un = "cm",
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 
@@ -717,7 +736,7 @@ lines(density(da$species_number))
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## graphics
 
@@ -739,7 +758,7 @@ background-image: url(https://cxlabsblog.files.wordpress.com/2017/10/2017-10-24-
 background-size: 700px
 background-position: 50% 50%
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 
@@ -751,7 +770,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 .pull-left[
@@ -767,7 +786,7 @@ ggplot(data = da) #<<
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 .pull-left[
@@ -784,7 +803,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 .pull-left[
@@ -802,7 +821,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 .pull-left[
@@ -820,7 +839,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, eval = FALSE}
@@ -831,7 +850,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -842,7 +861,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, eval = FALSE}
@@ -857,7 +876,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -873,7 +892,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, eval = FALSE}
@@ -888,7 +907,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -904,16 +923,27 @@ ggplot(data = da) +
 ---
 
 background-image: url(https://cxlabsblog.files.wordpress.com/2017/10/2017-10-24-14_36_29-visualization-layers-of-ggplot-google-docs.png)
-background-size: 700px
+background-size: 500px
 background-position: 50% 50%
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 
 ---
 
-# 5.4 Histograma (histogram)
+background-image: url(figs/ggplot2_2.png)
+background-size: 500px
+background-position: 50% 50%
+
+# 5.5 Histograma (histogram)
+
+## ggplot2
+
+
+---
+
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, eval = FALSE}
@@ -930,7 +960,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -947,7 +977,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, eval = FALSE}
@@ -964,7 +994,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -982,7 +1012,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, eval = FALSE}
@@ -1001,7 +1031,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1021,7 +1051,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggplot2
 ```{r, eval = FALSE}
@@ -1049,7 +1079,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggpubr
 ```{r, eval = FALSE}
@@ -1065,7 +1095,7 @@ gghistogram(data = da,
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggpubr
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1081,7 +1111,7 @@ gghistogram(data = da,
 
 ---
 
-# 5.4 Histograma (histogram)
+# 5.5 Histograma (histogram)
 
 ## ggpubr
 ```{r, eval = FALSE}
@@ -1109,7 +1139,7 @@ background-image: url(https://www.data-to-viz.com/img/section/Pie150.png)
 background-size: 250px
 background-position: 50% 70%
 
-# 5.5 Gráfico de setores (pie chart)
+# 5.6 Gráfico de setores (pie chart)
 
 ## **Representa os dados de**: uma coluna
 ## **Tipo de dado**: categórico
@@ -1124,7 +1154,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.5 Gráfico de setores (pie chart)
+# 5.6 Gráfico de setores (pie chart)
 
 ### Tabela de frequência
 
@@ -1137,7 +1167,7 @@ ta
 
 ---
 
-# 5.5 Gráfico de setores (pie chart)
+# 5.6 Gráfico de setores (pie chart)
 
 ## graphics
 ```{r, eval=FALSE}
@@ -1151,7 +1181,7 @@ legend("topright", c("Abundância", "Composição"), cex = 0.8, fill = c("steelb
 
 ---
 
-# 5.5 Gráfico de setores (pie chart)
+# 5.6 Gráfico de setores (pie chart)
 
 ## graphics
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1171,7 +1201,7 @@ background-size: 400px
 background-position: 50% 50%
 
 ---
-# 5.5 Gráfico de setores (pie chart)
+# 5.6 Gráfico de setores (pie chart)
 
 ### Tabela de frequência
 
@@ -1185,7 +1215,7 @@ ta_por
 
 ---
 
-# 5.5 Gráfico de setores (pie chart)
+# 5.6 Gráfico de setores (pie chart)
 
 ## ggplot2
 ```{r, eval=FALSE}
@@ -1202,7 +1232,7 @@ ggplot(ta_por) +
 
 ---
 
-# 5.5 Gráfico de setores (pie chart)
+# 5.6 Gráfico de setores (pie chart)
 
 ## ggplot2
 
@@ -1226,7 +1256,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.5 Gráfico de setores (pie chart)
+# 5.6 Gráfico de setores (pie chart)
 
 ## ggpubr
 ```{r, eval=FALSE}
@@ -1243,7 +1273,7 @@ ggpie(ta_por,
 
 ---
 
-# 5.5 Gráfico de setores (pie chart)
+# 5.6 Gráfico de setores (pie chart)
 
 ## ggpubr
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1297,7 +1327,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.5 Gráfico de setores (donut chart)
+# 5.6 Gráfico de setores (donut chart)
 
 ## ggplot2
 ```{r, eval=FALSE}
@@ -1318,7 +1348,7 @@ ggplot(ta_por) +
 
 ---
 
-# 5.5 Gráfico de setores (donut chart)
+# 5.6 Gráfico de setores (donut chart)
 
 ## ggplot2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1346,7 +1376,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.5 Gráfico de setores (donut chart)
+# 5.6 Gráfico de setores (donut chart)
 
 ## ggpubr
 ```{r, eval=FALSE}
@@ -1363,7 +1393,7 @@ ggdonutchart(ta_por,
 
 ---
 
-# 5.5 Gráfico de setores (donut chart)
+# 5.6 Gráfico de setores (donut chart)
 
 ## ggpubr
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1390,7 +1420,7 @@ background-image: url(https://www.data-to-viz.com/img/section/Bar150.png)
 background-size: 300px
 background-position: 50% 80%
 
-# 5.6 Gráfico de barras (bar plot)
+# 5.7 Gráfico de barras (bar plot)
 
 ## **Representa os dados de**: duas colunas
 ## **Modo das colunas**: X = categórico e Y = categórico
@@ -1405,7 +1435,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.6 Gráfico de barras (bar plot)
+# 5.7 Gráfico de barras (bar plot)
 
 ## Tabela de frequência
 ```{r}
@@ -1416,7 +1446,7 @@ ta
 
 ---
 
-# 5.6 Gráfico de barras (bar plot)
+# 5.7 Gráfico de barras (bar plot)
 
 ## graphics
 
@@ -1433,7 +1463,7 @@ barplot(ta,
 
 ---
 
-# 5.6 Gráfico de barras (bar plot)
+# 5.7 Gráfico de barras (bar plot)
 
 ## graphics
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1456,7 +1486,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.6 Gráfico de barras (bar plot)
+# 5.7 Gráfico de barras (bar plot)
 
 ### Tabela de frequência
 
@@ -1470,7 +1500,7 @@ ta_por
 
 ---
 
-# 5.6 Gráfico de barras (bar plot)
+# 5.7 Gráfico de barras (bar plot)
 
 ## ggplot2
 ```{r, eval = FALSE}
@@ -1487,7 +1517,7 @@ ggplot(data = ta_por) +
 
 ---
 
-# 5.6 Gráfico de barras (bar plot)
+# 5.7 Gráfico de barras (bar plot)
 
 ## ggplot2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1511,7 +1541,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.6 Gráfico de barras (bar plot)
+# 5.7 Gráfico de barras (bar plot)
 
 ### ggpubr
 ```{r, eval = FALSE}
@@ -1533,7 +1563,7 @@ ggbarplot(ta_por,
 
 ---
 
-# 5.6 Gráfico de barras (bar plot)
+# 5.7 Gráfico de barras (bar plot)
 
 ### ggpubr
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1565,7 +1595,7 @@ background-image: url(https://www.data-to-viz.com/img/section/Box1150.png)
 background-size: 250px
 background-position: 50% 70%
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ## **Representa os dados de**: duas colunas
 ## **Modo das colunas**: X = categórico e Y = contínuo
@@ -1577,7 +1607,7 @@ background-image: url(https://miro.medium.com/max/18000/1*2c21SkzJMf3frPXPAR_gZA
 background-size: 600px
 background-position: 50% 80%
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### Intervalo inter-quartil (*interquartile range* - IQR)
 ### Limite inferior e limite superipor (1.5 x IQR)
@@ -1593,7 +1623,7 @@ background-image: url(https://miro.medium.com/max/8100/1*NRlqiZGQdsIyAu0KzP7LaQ.
 background-size: 500px
 background-position: 50% 35%
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -1608,7 +1638,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ## graphics
 ```{r, eval = FALSE}
@@ -1626,7 +1656,7 @@ boxplot(species_number ~ as.factor(record), #<<
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ## graphics
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1651,7 +1681,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggplott2
 ```{r, eval = FALSE}
@@ -1669,7 +1699,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggplott2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1686,7 +1716,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggplott2
 ```{r, eval = FALSE}
@@ -1704,7 +1734,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggplott2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1767,7 +1797,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggpubr
 ```{r, eval=FALSE}
@@ -1780,7 +1810,7 @@ ggboxplot(data = da,
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggpubr
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1793,7 +1823,7 @@ ggboxplot(data = da,
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggpubr
 ```{r, eval=FALSE}
@@ -1809,7 +1839,7 @@ ggboxplot(data = da,
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggpubr
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1825,7 +1855,7 @@ ggboxplot(data = da,
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggpubr
 ```{r, eval=FALSE}
@@ -1844,7 +1874,7 @@ ggboxplot(data = da,
 
 ---
 
-# 5.7 Gráfico de caixa (box plot)
+# 5.8 Gráfico de caixa (box plot)
 
 ### ggpubr
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1911,7 +1941,7 @@ background-image: url(https://www.data-to-viz.com/img/section/ScatterPlot150.png
 background-size: 300px
 background-position: 50% 80%
 
-# 5.8 Gráfico de dispersão (scatter plot)
+# 5.9 Gráfico de dispersão (scatter plot)
 
 ## **Representa os dados de**: duas colunas
 ## **Modo das colunas**: X = numérico e Y = numérico
@@ -1926,7 +1956,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.8 Gráfico de dispersão (scatter plot)
+# 5.9 Gráfico de dispersão (scatter plot)
 
 ## graphics
 ```{r, eval = FALSE}
@@ -1942,7 +1972,7 @@ plot(species_number ~ effort_months,
 
 ---
 
-# 5.8 Gráfico de dispersão (scatter plot)
+# 5.9 Gráfico de dispersão (scatter plot)
 
 ## graphics
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -1965,7 +1995,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.8 Gráfico de dispersão (scatter plot)
+# 5.9 Gráfico de dispersão (scatter plot)
 
 ## ggplot2
 ```{r, eval = FALSE, message=FALSE, warning=FALSE}
@@ -1982,7 +2012,7 @@ ggplot(data = da) +
 
 ---
 
-# 5.8 Gráfico de dispersão (scatter plot)
+# 5.9 Gráfico de dispersão (scatter plot)
 
 ## ggplot2
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -2006,7 +2036,7 @@ background-position: 50% 50%
 
 ---
 
-# 5.8 Gráfico de dispersão (scatter plot)
+# 5.9 Gráfico de dispersão (scatter plot)
 
 ## ggpubr
 ```{r, eval = FALSE, message=FALSE, warning=FALSE}
@@ -2023,7 +2053,7 @@ ggscatter(data = da,
 
 ---
 
-# 5.8 Gráfico de dispersão (scatter plot)
+# 5.9 Gráfico de dispersão (scatter plot)
 
 ## ggpubr
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align='center', out.width = '60%'}
@@ -2043,6 +2073,12 @@ ggscatter(data = da,
 class: inverse, middle, center
 
 # Dúvidas?
+
+---
+
+class: inverse, middle, center
+
+# Exercícios
 
 ---
 

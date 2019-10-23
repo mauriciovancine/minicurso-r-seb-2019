@@ -343,21 +343,23 @@ background-position: 75% 75%
 ## Conteúdo
 
 ### 5 Visualização de dados
-5.1 Tipos de dados (*variáveis = colunas*)
+5.1 Principais pacotes para gráficos no R
 <br>
-5.2 Principais tipos de gráficos
+5.2 Principais livros e sites
 <br>
-5.3 Gráficos no R (*graphics*, *ggplot2* e *esquisse*)
+5.3 Colunas como eixos do gráficos (*variáveis = colunas*)
 <br>
-5.4 Histograma (*histogram*)
+5.4 Principais tipos de gráficos
 <br>
-5.5 Gráfico de setores (*pie chart* e *danut plot*)
+5.5 Histograma (*histogram*)
 <br>
-5.6 Gráfico de barras (*bar plot*)
+5.6 Gráfico de setores (*pie chart* e *donut plot*)
 <br>
-5.7 Gráfico de caixa (*box plot* e *violin plot*)
+5.7 Gráfico de barras (*bar plot*)
 <br>
-5.8 Gráfico de dispersão (*scatter plot*)
+5.8 Gráfico de caixa (*box plot* e *violin plot*)
+<br>
+5.9 Gráfico de dispersão (*scatter plot*)
 
 ---
 
