@@ -31,7 +31,7 @@ A linguagem R vem se destacando nos últimos anos (desde de 2000), como a princi
 **Local** <br>
 À definir
 
-**Ementa** <br> 
+**Plano de ensino** <br> 
 [pdf](https://github.com/mauriciovancine/minicurso-r-sebio-2019/blob/master/00_ementa/plano_ensino_minicurso_r_2019_sebio.pdf)
 
 **Contato** <br>

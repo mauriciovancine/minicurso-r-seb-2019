@@ -11,7 +11,7 @@ setwd("/home/mude/data/github/minicurso-r-sebio-2019/01_aulas")
 dir()
 
 # convert rmarkdown
-purrr::map(dir(pattern = ".Rmd")[6], pagedown::chrome_print)
+purrr::map(dir(pattern = ".Rmd")[4:6], pagedown::chrome_print)
 
 # convert html
 # purrr::map(dir(pattern = ".html"), pagedown::chrome_print)
