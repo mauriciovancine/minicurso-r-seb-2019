@@ -11,6 +11,7 @@ output:
       highlightStyle: rainbow
       highlightLines: true
       countIncrementalSlides: false
+      slideNumberFormat: "%current%/%total%"
     includes:
       in_header: header.html
 ---
@@ -24,6 +25,19 @@ class: clear, center, middle
 background-image: url(https://www.r-project.org/logo/Rlogo.svg)
 background-size: 500px
 background-position: 50% 50%
+
+---
+
+# 1 R, aplicações e material
+
+```{r}
+# teste
+a <- 2
+b <- "asdasdas"
+a
+b
+```
+
 
 ---
 

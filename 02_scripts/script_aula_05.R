@@ -2,26 +2,25 @@
 # aula 5 - visualizacao de dados
 
 # mauricio vancine
-# 30-09-2019
+# 24-10-2019
 # -------------------------------------------------------------------------
 
 # topicos -----------------------------------------------------------------  
 # 5.1 tipos de dados (variaveis = colunas)
 # 5.2 principais tipos de graficos
 # 5.3 graficos no r (pacotes graphics, ggplot2 e ggpubr)
-# 5.4 histograma (histogram)
-# 5.5 grafico de setores (pie chart e danut plot)
-# 5.6 grafico de barras (bar plot)
-# 5.7 grafico de caixa (box plot)
-# 5.8 grafico de dispersao (scatter plot)
-# 5.9 grafico pareado (pairs plot)
+# 5.5 histograma (histogram)
+# 5.6 grafico de setores (pie chart e danut plot)
+# 5.7 grafico de barras (bar plot)
+# 5.8 grafico de caixa (box plot)
+# 5.9 grafico de dispersao (scatter plot)
 
-# 5.1 tipos de dados (variaveis = colunas) --------------------------------
+# 5.1 Principais pacotes para gráficos ------------------------------------
 # package
 library(tidyverse)
 
 # directory
-setwd("/home/mude/data/github/disciplina-geoprocessamento/03_dados/00_tabelas")
+setwd("/home/mude/data/github/minicurso-r-sebio-2019/03_dados")
 
 # importar
 da <- read_csv("ATLANTIC_AMPHIBIANS_sites.csv")
@@ -41,8 +40,7 @@ ggplot(data = da) + aes(effort_months, species_number) + geom_point()
 library(ggpubr)
 ggscatter(da, x = "effort_months", y = "species_number")
 
-
-# 5.4 histograma (histogram) ----------------------------------------------
+# 5.5 histograma (histogram) ----------------------------------------------
 # graphics
 # histogram
 hist(da$species_number)
@@ -238,7 +236,7 @@ gghistogram(data = da,
 ggsave("histogram_ggpubr.tiff", wi = 20, he = 15, un = "cm", dpi = 300)
 
 
-# 5.5 grafico de setores (pie chart) --------------------------------------
+# 5.6 grafico de setores (pie chart) --------------------------------------
 # graphics
 # frequence table
 ta <- table(da$record)
@@ -250,7 +248,8 @@ pie(ta,
     labels = paste(ta, "%"),
     main = "Tipos de amostragens",
     col = c("steelblue", "brown"))
-legend("topright", c("Abundância", "Composição"), cex = 0.8, fill = c("steelblue", "brown"))
+legend("topright", c("Abundância", "Composição"), 
+       cex = 0.8, fill = c("steelblue", "brown"))
 
 # ggplot2
 # frequence table as data frame
@@ -281,7 +280,7 @@ ggpie(ta_por,
       color = "white",
       palette = c("#00AFBB", "#FC4E07"))
 
-# 5.5 grafico de setores (donut chart) ------------------------------------
+# 5.6 grafico de setores (donut chart) ------------------------------------
 # ggplot2
 # donut
 ggplot(ta_por) +
@@ -309,7 +308,7 @@ ggdonutchart(ta_por,
              palette = c("#00AFBB", "#FC4E07"))
 
 
-# 5.6 grafico de barras (bar plot) ----------------------------------------
+# 5.7 grafico de barras (bar plot) ----------------------------------------
 # frequency table
 ta <- table(da$record)
 names(ta) <- c("Abundância", "Composição")
@@ -335,6 +334,7 @@ ta_por
 ggplot(data = ta_por) +
   aes(x = record, y = freq) +
   geom_bar(fill = c("blue", "forest green"), stat = "identity") +
+  geom_text(aes(x = record, y = freq, label = freq), size = 8, color = "white", vjust = 2) +
   labs(x = "Tipo de registro",
        y = "Frequência") +
   theme_classic() +
@@ -352,13 +352,13 @@ ggbarplot(ta_por,
           label = TRUE, 
           lab.pos = "in", 
           lab.col = "white",
-          lab.size = 5,
+          lab.size = 8,
           xlab = "Tipo de registro",
           ylab = "Frequeência absoluta",
           legend = "none")
 
 
-# 5.7 grafico de caixa (box plot) -----------------------------------------
+# 5.8 grafico de caixa (box plot) -----------------------------------------
 # graphics
 boxplot(species_number ~ as.factor(record),
         data = da,
@@ -453,7 +453,7 @@ ggviolin(data = da,
          legend = "none")
 
 
-# 5.8 grafico de dispersao (scatter plot) ---------------------------------
+# 5.9 grafico de dispersao (scatter plot) ---------------------------------
 # graphics
 plot(species_number ~ effort_months,
      data = da,
@@ -485,42 +485,5 @@ ggscatter(data = da,
           size = 5,
           xlab = "Esforço amostral", 
           ylab = "Número de espécies")
-
-
-# 5.9 grafico pareado (pairs plot) ----------------------------------------
-# selecionar as colunas
-da_sel <- da %>% 
-  select(temperature, precipitation, altitude)
-da_sel
-
-# graphics
-# pairs plot
-pairs(da_sel,
-      pch = 20)
-
-# ggally
-# package
-library(GGally)
-
-# ggpairs
-ggpairs(data = da_sel) +
-  theme_bw()
-
-# psych
-# package
-library(psych)
-
-# pairs
-pairs.panels(da_sel, 
-             method = "spearman",
-             pch = 20, 
-             ellipses = FALSE, 
-             density = FALSE, 
-             stars = TRUE, 
-             hist.col = "gray",
-             digits = 2,
-             rug = FALSE,
-             breaks = 10,
-             ci = TRUE)
 
 # end ---------------------------------------------------------------------

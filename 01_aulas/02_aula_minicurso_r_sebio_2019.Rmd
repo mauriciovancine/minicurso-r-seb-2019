@@ -11,6 +11,7 @@ output:
       highlightStyle: rainbow
       highlightLines: true
       countIncrementalSlides: false
+      slideNumberFormat: "%current%/%total%"
     includes:
       in_header: header.html
 ---
@@ -1455,7 +1456,7 @@ background-position: 50% 50%
 
 ## Detalhes de um pacote
 
-```{r}
+```{r,eval=FALSE}
 library(help = "vegan")
 ```
 
@@ -1671,7 +1672,7 @@ background-position: 50% 50%
 ---
 
 class: clear, inverse, middle, center
-background-image: url(https://i.imgur.com/7hinFAF.gif)
+background-image: url(https://pa1.narvii.com/6997/0df6fe4c8cbd73dc98b420e45037c5b5b2439dc4r1-500-423_hq.gif)
 background-size: 700px
 background-position: 50% 50%
 

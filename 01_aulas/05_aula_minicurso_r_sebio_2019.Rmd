@@ -11,6 +11,7 @@ output:
       highlightStyle: rainbow
       highlightLines: true
       countIncrementalSlides: false
+      slideNumberFormat: "%current%/%total%"
     includes:
       in_header: header.html
 ---
@@ -240,7 +241,7 @@ ggplot(data = da) + aes(effort_months, species_number) + geom_point()
 ---
 
 class: clear, center, middle
-background-image: url(http://www.sthda.com/english/sthda-upload/images/symplyr/ggpubr-300.png)
+background-image: url(figs/ggpubr.png)
 background-size: 300px
 background-position: 50% 50%
 
@@ -1073,7 +1074,7 @@ ggsave("histogram_ggplot2.tiff", wi = 20, he = 15, un = "cm", dpi = 300) #<<
 ---
 
 class: clear, center, middle
-background-image: url(http://www.sthda.com/english/sthda-upload/images/symplyr/ggpubr-300.png)
+background-image: url(figs/ggpubr.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1250,7 +1251,7 @@ ggplot(ta_por) +
 ---
 
 class: clear, center, middle
-background-image: url(http://www.sthda.com/english/sthda-upload/images/symplyr/ggpubr-300.png)
+background-image: url(figs/ggpubr.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1370,7 +1371,7 @@ ggplot(ta_por) +
 ---
 
 class: clear, center, middle
-background-image: url(http://www.sthda.com/english/sthda-upload/images/symplyr/ggpubr-300.png)
+background-image: url(figs/ggpubr.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1507,6 +1508,7 @@ ta_por
 ggplot(data = ta_por) +
   aes(x = record, y = freq) +
   geom_bar(fill = c("blue", "forest green"), stat = "identity") + #<<
+  geom_text(aes(x = record, y = freq, label = freq), size = 8, color = "white", vjust = 2)  + #<<
   labs(x = "Tipo de registro",
        y = "Frequência") +
   theme_classic() +
@@ -1524,6 +1526,7 @@ ggplot(data = ta_por) +
 ggplot(data = ta_por) +
   aes(x = record, y = freq) +
   geom_bar(fill = c("blue", "forest green"), stat = "identity") + #<<
+  geom_text(aes(x = record, y = freq, label = freq), size = 8, color = "white", vjust = 2)  + #<<
   labs(x = "Tipo de registro",
        y = "Frequência") +
   theme_classic() +
@@ -1535,7 +1538,7 @@ ggplot(data = ta_por) +
 ---
 
 class: clear, center, middle
-background-image: url(http://www.sthda.com/english/sthda-upload/images/symplyr/ggpubr-300.png)
+background-image: url(figs/ggpubr.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -1554,7 +1557,7 @@ ggbarplot(ta_por,
           label = TRUE, 
           lab.pos = "in", 
           lab.col = "white",
-          lab.size = 5,
+          lab.size = 8,
           xlab = "Tipo de registro",
           ylab = "Frequeência absoluta",
           legend = "none")
@@ -1576,7 +1579,7 @@ ggbarplot(ta_por,
           label = TRUE, 
           lab.pos = "in", 
           lab.col = "white",
-          lab.size = 5,
+          lab.size = 8,
           xlab = "Tipo de registro",
           ylab = "Frequeência absoluta",
           legend = "none")
@@ -1791,7 +1794,7 @@ ggplot(data = da) +
 ---
 
 class: clear, center, middle
-background-image: url(http://www.sthda.com/english/sthda-upload/images/symplyr/ggpubr-300.png)
+background-image: url(figs/ggpubr.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -2030,7 +2033,7 @@ ggplot(data = da) +
 ---
 
 class: clear, center, middle
-background-image: url(http://www.sthda.com/english/sthda-upload/images/symplyr/ggpubr-300.png)
+background-image: url(figs/ggpubr.png)
 background-size: 400px
 background-position: 50% 50%
 
@@ -2076,9 +2079,37 @@ class: inverse, middle, center
 
 ---
 
-class: inverse, middle, center
+# Muito obrigado!
 
-# Exercícios
+--
+
+<br><br>
+
+##  Muito obrigado pela **atenção de vocês!**
+
+--
+
+## O conteúdo foi **muito denso** e o **tempo foi demasiadamente curto**
+
+--
+
+## Peço desculpas se **algum ponto não ficou muito claro** ou se **falei rápido demais**
+
+--
+
+## Não deixem o **tempo passar**: começem seus estudos **agora!**
+
+---
+
+background-image: url(figs/ram_logo.jpg)
+background-size: 600px
+background-position: 50% 50%
+
+# RAM Soluções Tecnológicas e Ambienais
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+https://ramambiental.com.br/
 
 ---
 
